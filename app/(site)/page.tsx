@@ -31,7 +31,7 @@ export default async function Home() {
 
   return (
     <div className="pb-10">
-      <HeroImage
+      <HeroSimple
         title="Building hackin’ cool digital products around the world 🌴."
         subtitle="I'm Amy. Frontend engineer writing code and blog on the internet."
       />
