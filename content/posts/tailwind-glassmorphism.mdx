@@ -1,0 +1,66 @@
+---
+title: "Glassmorphism with Tailwind CSS Under 60 seconds"
+publishedDate: "2020-12-17"
+lastUpdatedDate: "2021-05-23"
+tags:
+  - "react"
+  - "tailwind"
+  - "javascript"
+  - "frontend"
+  - "development"
+description: Quick guide on how to make glass morph components with Tailwind (updated for latest Tailwind version)
+status: published
+---
+
+Glassmorphism is an ongoing trend right now in User interfaces. The new macOS, Big Sur brings a lot of it into the OS, and Microsoft has it for years with Aero UI, then later FluentUI.
+
+To recreate this effect on the web, we only need a few css properties, but what if we want to use Tailwind?
+
+## Tailwind 2.1 Update
+
+Tailwind 2.1 introduced first-party support of background-blur utility, so I'm back with a revision of this post.
+
+The only classes you need to apply to your element right now:
+`bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200`
+
+[Here's the Play link for the updated code](https://play.tailwindcss.com/LTnkNgDSLj)
+
+## Original article:
+
+_(Only read this if you are curious about how it worked before Tailwind 2.1)_
+
+If you prefer a quick 1 min video:
+
+<YouTubeVideo id="sIRbiNKJ0Cc" />
+
+We need these utility classes: `bg-opacity-{xy}`, `bg-clip-padding`, `bg-{color}`. We can add a little border and shadow to look better with these: `border border-{color}`, `shadow-{size}`.
+
+And to completely recreate the effect, we should blur the background. We've got 2 options here:
+
+### 1. Inline styles
+
+Add a style property to the card div: `style="backdrop-filter: blur(20px);"`.
+
+[You can access the full code here](https://play.tailwindcss.com/LTnkNgDSLj)
+
+### 2. Extend Tailwind
+
+We can use [Tailwindcss-filters](https://github.com/benface/tailwindcss-filters) to extend it and use `backdrop-filter` as a utility class.
+
+Just `yarn add tailwindcss-filters`, then extend your `tailwind.config` file:
+
+```tailwind.config.js
+module.exports = {
+  theme: {
+    backdropFilter: {
+      'none': 'none',
+      'blur': 'blur(20px)',
+    },
+  },
+  plugins: [
+    require('tailwindcss-filters'),
+  ],
+};
+```
+
+And now you can use the `backdrop-filter-blur` utility class on your HTML.

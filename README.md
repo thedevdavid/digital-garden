@@ -1,34 +1,156 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Modern Developer Digital Garden Starter
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/thedevdavid/digital-garden)
+
+An open source digital gardening template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
+
+This project is from developers for developers. Please feel free to report a bug, discuss the current state, submit ideas for improvements, submit a fix, propose new features, or whatever you want. All contributions are welcome! Read more at the [contributing guidelines](./CONTRIBUTING.md).
+
+If you love this template and/or use it, please give it a star on GitHub. This will help more people discover it, thus help improving the template.
+
+[![GitHub stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)](
+
+**Note: This project is always evolving and it's far from being perfect or even done.** I'm always open to suggestions and contributions. Feel free to open an issue or a PR if you have any ideas or suggestions. You can also see the [roadmap](#features--roadmap) for planned features if you want to contribute.
+
+## Table of Contents
+
+- [Motivation](#motivation)
+- [Getting Started](#getting-started)
+  - [Writing content](#writing-content)
+  - [Deployment](#deployment)
+- [Customization](#customization)
+  - [Fonts](#fonts)
+  - [Colors](#colors)
+  - [Metadata](#metadata)
+  - [Analytics](#analytics)
+  - [Newsletter subscription](#newsletter-subscription)
+  - [Hero section](#hero-section)
+  - [Other tips & tricks](#other-tips--tricks)
+    - [Image optimization](#image-optimization)
+- [Examples](#examples)
+- [Features & Roadmap](#features--roadmap)
+
+## Motivation
+
+As a developer who creates content, I want to have a digital garden where I can share my thoughts and ideas with the world. Now, there's not really a "perfect solution" for this currently. With included analytics, SEO, email subscribtions, modern tooling, simple design, etc. We either have to build one from scratch, use a design template and code the features, or use a CMS/no-code tool.
+
+So I decided to build a solution that I would use myself. This is the result.
 
 ## Getting Started
 
-First, run the development server:
+1. Use the repo as a template
+2. Install dependencies with `pnpm install`
+3. Edit `utils/metadata.ts` with your information
+4. Edit `utils/usesData.ts` with your information
+5. Edit `utils/projectsData.ts` with your information
+6. Edit `content/pages/now` with your information
+7. Edit `content/pages/about` with your information
+8. Run the development server with `pnpm dev`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Writing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can write content in Markdown or MDX. The content is located in `content/` and is organized in folders. The `pages` folder contains the pages. The `posts` folder contains the blogposts. The `projects` folder contains the projects.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Deployment
 
-## Learn More
+You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README. Don't forget to update `package.json` author information.
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Fonts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project uses [Inter](https://rsms.me/inter/) as the default font. You can change it on `app/layout.tsx` using the `next/fonts` package.
 
-## Deploy on Vercel
+### Colors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project uses Tailwind colors and @shadcn/ui config. Customize the colors on `globals.css`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Metadata
+
+You can change the metadata in `utils/metadata.ts`. This will be used around the site for social links, handles, SEO, and OG.
+
+### Analytics
+
+_WIP_ as I'm still deciding which analytics tools to support. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+
+### Newsletter subscription
+
+_WIP_ as I'm still deciding which email tools to support. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+
+### Hero section
+
+You can choose between 3 different hero variants to use in `app/(site)/layout.tsx`.
+
+1. `Simple` - A simple centered hero section with image, title, socials, and subtitle.
+2. `Video` - 2 column hero section with Videoask embed on one side and title and subtitle on the other.
+3. `Image` - 2 column hero section with image on one side and title, socials, and subtitle on the other.
+
+### Other tips & tricks
+
+#### Image optimization
+
+Optimize images in seconds for free with ImageOptim. Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
+
+## Examples
+
+- [https://davidlevai.com/](https://davidlevai.com/)
+
+Create a PR and add your digital garden to this list if you're using the template!
+
+## Features & Roadmap
+
+- [x] Basic functionality of reading pages and posts
+- [x] Basic design dark/light mode
+- [x] MDX code highlighting
+- [x] Readme.md
+- [x] `robots.txt` & `sitemap.xml`
+- [x] RSS Feed
+- [x] Reading time estimate
+- [x] LICENSE
+- [x] contributing.md
+- [x] MDX components (TOC & footnotes)
+- [x] general config & metadata (author, URL, socials, etc.)
+- [x] uses page
+- [x] Link in bio page
+- [x] OG image generation
+- [x] projects page
+- [x] about section on homepage
+- [ ] Design improvements (whitespace, layout, etc.)
+- [ ] `manifest.json`
+- [ ] search & command bar
+- [ ] newsletter integration
+- [ ] Post series
+- [ ] Hidden content (behind email subscription)
+- [ ] 100 lighthouse score
+- [ ] Command bar fuzzy search in content
+- [ ] Pagination
+- [ ] SEO improvements
+- [ ] analytics (fathom, simplelytics, vercel)
+- [ ] Accessibility audit
+- [ ] TypeScript fixes
+- [ ] Redesign uses page
+- [ ] Redesign projects page
+- [ ] general refactor
+- [ ] general cleanup
+- [ ] implement content security policies
+- [ ] implement a videoask-like solution for the hero section
+- [ ] Post like counter (?)
+- [ ] Visitor counter (?)
+- [ ] code playground instead of code highlighting (?)
+- [ ] Categories and/or tags (?)
+- [ ] Commenting system (?)
+- [ ] Social sharing buttons (?)
+- [ ] keyboard-based navigation with hotkeys (?)
+- [ ] multiple layouts (sidebar, full-width, etc.) (?)
+- [ ] multilang support (?)
+
+## Inspiration & Mentions
+
+- [Delba Oliveira Personal Blog](https://github.com/delbaoliveira/website) - Using and structuring table of contents with Contentlayer
+- [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) - Idea
+
+## Support
+
+If you love this template and/or use it, please give it a star on GitHub.
