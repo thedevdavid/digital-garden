@@ -2,7 +2,7 @@ export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:30
 
 export const defaultAuthor = {
   name: "Amy Shields",
-  handle: "@thedevdavid",
+  handle: "@amyshieldsfake",
   social: {
     github: "https://github.com/thedevdavid",
     instagram: "https://instagram.com/thedevdavid",
