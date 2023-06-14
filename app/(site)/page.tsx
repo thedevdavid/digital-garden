@@ -82,7 +82,7 @@ export default async function Home() {
                 alt={defaultAuthor.name}
                 width={400}
                 height={400}
-                className="h-auto w-80 hover:rotate-3"
+                className="h-auto w-72 -rotate-1 hover:rotate-3"
               />
               <div className="text-center">
                 <h1 className="font-heading text-2xl font-bold">{defaultAuthor.name}</h1>

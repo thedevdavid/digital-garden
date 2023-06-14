@@ -1,5 +1,8 @@
 # Modern Developer Digital Garden Starter
 
+![Image2](/screenshots/garden2.png)
+[More screenshots here](/screenshots/)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/thedevdavid/digital-garden)
 
 An open source digital gardening template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
