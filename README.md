@@ -82,7 +82,9 @@ You can change the metadata in `utils/metadata.ts`. This will be used around the
 
 ### Analytics
 
-_WIP_ as I'm still deciding which analytics tools to support. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+Vercel analytics is added. To configure, you need to enable it on [Vercel project dashboard](https://vercel.com/dashboard) by selecting your Project and then click the Analytics tab and click Enable from the dialog.
+
+Supporting other analytics providers are planned. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ### Newsletter subscription
 
@@ -126,9 +128,10 @@ Create a PR and add your digital garden to this list if you're using the templat
 - [x] OG image generation
 - [x] projects page
 - [x] about section on homepage
+- [x] search & command bar
+- [x] Vercel analytics (fathom, simplelytics, vercel)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] `manifest.json`
-- [ ] search & command bar
 - [ ] newsletter integration
 - [ ] Post series
 - [ ] Hidden content (behind email subscription)
@@ -136,8 +139,8 @@ Create a PR and add your digital garden to this list if you're using the templat
 - [ ] Command bar fuzzy search in content
 - [ ] Pagination
 - [ ] SEO improvements
-- [ ] analytics (fathom, simplelytics, vercel)
 - [ ] Accessibility audit
+- [ ] Other analytics providers (fathom, simplelytics, etc.)
 - [ ] TypeScript fixes
 - [ ] Redesign uses page
 - [ ] Redesign projects page
