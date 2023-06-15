@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Inter, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import siteMetadata from "@/lib/metadata";
 import { Toaster } from "@/components/ui/toaster";
@@ -32,6 +33,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Toaster />
         </ThemeProvider>
       </body>
+
+      <Analytics />
     </html>
   );
 }
