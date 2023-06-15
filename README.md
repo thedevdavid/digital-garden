@@ -41,6 +41,8 @@ So I decided to build a solution that I would use myself. This is the result.
 
 ## Getting Started
 
+Here's a [link to a website customizing commit](https://github.com/thedevdavid/website-2023/commit/fb10942d424a1389f9c4c1605849e45ff718656d) with all the changes.
+
 1. Use the repo as a template
 2. Install dependencies with `pnpm install`
 3. Edit `utils/metadata.ts` with your information
@@ -90,11 +92,11 @@ _WIP_ as I'm still deciding which email tools to support. Feel free to open an i
 
 ### Hero section
 
-You can choose between 3 different hero variants to use in `app/(site)/layout.tsx`.
+You can choose between 3 different hero variants to use in `app/(site)/page.tsx` by changing the imported hero component.
 
-1. `Simple` - A simple centered hero section with image, title, socials, and subtitle.
-2. `Video` - 2 column hero section with Videoask embed on one side and title and subtitle on the other.
-3. `Image` - 2 column hero section with image on one side and title, socials, and subtitle on the other.
+1. `HeroSimple` - A simple centered hero section with image, title, socials, and subtitle.
+2. `HeroVideo` - 2 column hero section with Videoask embed on one side and title and subtitle on the other.
+3. `HeroImage` - 2 column hero section with image on one side and title, socials, and subtitle on the other.
 
 ### Other tips & tricks
 
