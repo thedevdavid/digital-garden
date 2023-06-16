@@ -11,7 +11,7 @@ This project is from developers for developers. Please feel free to report a bug
 
 If you love this template and/or use it, please give it a star on GitHub. This will help more people discover it, thus help improving the template.
 
-[![GitHub stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)](
+![GitHub Repo stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)
 
 **Note: This project is always evolving and it's far from being perfect or even done.** I'm always open to suggestions and contributions. Feel free to open an issue or a PR if you have any ideas or suggestions. You can also see the [roadmap](#features--roadmap) for planned features if you want to contribute.
 
