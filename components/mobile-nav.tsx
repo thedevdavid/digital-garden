@@ -5,7 +5,7 @@ import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata from "@/lib/metadata";
 import { navigationLinks } from "@/lib/navigation-links";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -26,19 +26,27 @@ export function MobileNav() {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent size="xl" position="right" className="pr-0">
+      <SheetContent size="content" position="bottom" className="pr-0">
         <MobileLink href="/" className="flex items-center" onOpenChange={setOpen}>
-          <span className="font-bold">{defaultAuthor.handle}</span>
+          <span className="font-bold">{siteMetadata.title.default}</span>
         </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+        <ScrollArea className="my-4 max-h-96 overflow-y-scroll pb-10">
           <div className="flex flex-col space-y-3">
-            {navigationLinks?.map(
-              (item) =>
-                item.href && (
-                  <MobileLink key={item.href} href={item.href} onOpenChange={setOpen}>
-                    {item.title}
-                  </MobileLink>
-                )
+            {navigationLinks?.map((item) =>
+              item.content ? (
+                <div className="order-1 mt-3 flex flex-col space-y-3" key={item.title.trim()}>
+                  <p className="font-bold">{item.title}</p>
+                  {item.content.map((subItem) => (
+                    <MobileLink key={subItem.href} href={subItem.href} onOpenChange={setOpen}>
+                      {subItem.title}
+                    </MobileLink>
+                  ))}
+                </div>
+              ) : (
+                <MobileLink key={item.href} href={item.href as string} onOpenChange={setOpen}>
+                  {item.title}
+                </MobileLink>
+              )
             )}
           </div>
         </ScrollArea>

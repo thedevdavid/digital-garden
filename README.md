@@ -58,6 +58,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 
 You can write content in Markdown or MDX. The content is located in `content/` and is organized in folders. The `pages` folder contains the pages. The `posts` folder contains the blogposts. The `projects` folder contains the projects.
 
+Editing list pages is done in the `lib` folder.
+
+- `/uses` - `lib/uses-data.ts`
+- `/projects` - `lib/projects-data.ts`
+- `/social` - `lib/social-data.ts`
+
 ### Deployment
 
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
@@ -78,7 +84,9 @@ The project uses Tailwind colors and @shadcn/ui config. Customize the colors on 
 
 ### Metadata
 
-You can change the metadata in `utils/metadata.ts`. This will be used around the site for social links, handles, SEO, and OG.
+You can change the metadata in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
+
+You can edit navigation links in `lib/navigation-links.ts`.
 
 ### Analytics
 
