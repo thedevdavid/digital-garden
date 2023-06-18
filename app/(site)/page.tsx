@@ -47,7 +47,7 @@ export default async function Home() {
                       "select-rounded-md block w-full rounded-md px-3 py-6 leading-none no-underline outline-none transition hover:bg-foreground/20 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     )}
                   >
-                    <h3 className="m-0 text-2xl font-bold leading-none text-foreground">{post.title}</h3>
+                    <h2 className="m-0 text-2xl font-bold leading-none text-foreground">{post.title}</h2>
                     <div className="mb-4 mt-1 text-sm leading-snug text-muted-foreground">
                       <time dateTime={post.publishedDate}>{format(parseISO(post.publishedDate), "LLLL d, yyyy")}</time>
                       <span>{` // ${post.readTimeMinutes} mins read`}</span>
