@@ -1,11 +1,5 @@
-import Link from "next/link";
-
-import { defaultAuthor } from "@/lib/metadata";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { CommandDialogComponent } from "@/components/command-dialog";
 import Footer from "@/components/footer";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Navbar } from "@/components/navbar";
+import { Navigation } from "@/components/navigation";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -13,22 +7,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="">
-      <header className="mx-auto mt-4 h-16 w-full max-w-6xl px-4 lg:px-0">
-        <div className="container flex items-center justify-between rounded-lg border border-black/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
-          <Avatar asChild>
-            <Link href="/">
-              <AvatarImage className="rounded-full border border-black hover:opacity-60" src="/avatar.png" />
-              <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
-            </Link>
-          </Avatar>
-          <nav className="ml-auto space-x-6 text-sm font-medium">
-            <Navbar />
-          </nav>
-          <CommandDialogComponent />
-          <ModeToggle />
-        </div>
-      </header>
+    <>
+      <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
       <main>{children}</main>
       <Footer />
@@ -44,6 +24,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       </div>
-    </div>
+    </>
   );
 }

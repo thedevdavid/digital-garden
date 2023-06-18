@@ -11,7 +11,7 @@ This project is from developers for developers. Please feel free to report a bug
 
 If you love this template and/or use it, please give it a star on GitHub. This will help more people discover it, thus help improving the template.
 
-[![GitHub stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)](
+![GitHub Repo stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)
 
 **Note: This project is always evolving and it's far from being perfect or even done.** I'm always open to suggestions and contributions. Feel free to open an issue or a PR if you have any ideas or suggestions. You can also see the [roadmap](#features--roadmap) for planned features if you want to contribute.
 
@@ -58,6 +58,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 
 You can write content in Markdown or MDX. The content is located in `content/` and is organized in folders. The `pages` folder contains the pages. The `posts` folder contains the blogposts. The `projects` folder contains the projects.
 
+Editing list pages is done in the `lib` folder.
+
+- `/uses` - `lib/uses-data.ts`
+- `/projects` - `lib/projects-data.ts`
+- `/social` - `lib/social-data.ts`
+
 ### Deployment
 
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
@@ -78,7 +84,9 @@ The project uses Tailwind colors and @shadcn/ui config. Customize the colors on 
 
 ### Metadata
 
-You can change the metadata in `utils/metadata.ts`. This will be used around the site for social links, handles, SEO, and OG.
+You can change the metadata in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
+
+You can edit navigation links in `lib/navigation-links.ts`.
 
 ### Analytics
 

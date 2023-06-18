@@ -10,11 +10,12 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 interface SpotlightCardProps {
   title: string;
   description: string;
-  imgSrc: string;
+  mediaSrc: string;
+  mediaType: string;
   href: string;
 }
 
-export const SpotlightCard = ({ title, description, imgSrc, href }: SpotlightCardProps) => {
+export const SpotlightCard = ({ title, description, mediaSrc, mediaType, href }: SpotlightCardProps) => {
   const { theme } = useTheme();
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -70,7 +71,14 @@ export const SpotlightCard = ({ title, description, imgSrc, href }: SpotlightCar
       />
 
       <AspectRatio ratio={16 / 9}>
-        <Image src={imgSrc} alt={title} width={960} height={540} className="m-0 p-0" />
+        {mediaType === "video" ? (
+          <video autoPlay loop muted playsInline className="m-0 p-0">
+            <source src="/project-garden.webm" type="video/webm" />
+            <source src="/project-garden.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <Image src={mediaSrc} alt={title} width={960} height={540} className="m-0 p-0" />
+        )}
       </AspectRatio>
       <div className="p-6">
         <h2 className="mb-2 line-clamp-1 font-medium tracking-tight text-foreground">{title}</h2>

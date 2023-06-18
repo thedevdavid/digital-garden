@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { navigationLinks } from "@/lib/navigation-links";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -15,70 +15,37 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const content: { title: string; href: string; description: string }[] = [
-  {
-    title: "Blog",
-    href: "/posts",
-    description: "Blogposts. Mostly about web development. Or chicken fingers",
-  },
-  {
-    title: "Speaking",
-    href: "/speaking",
-    description: "My previous (and current) talks, workshops, and other speaking engagements.",
-  },
-  {
-    title: "Videos",
-    href: defaultAuthor.social.youtube,
-    description: "My YouTube channel where I talk about web development.",
-  },
-  {
-    title: "Newsletter",
-    href: siteMetadata.newsletterUrl,
-    description: "My newsletter about software development",
-  },
-  {
-    title: "Teaching",
-    href: "/teaching",
-    description: "I teach others. Sometimes for free, sometimes for money.",
-  },
-];
-
 export function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Content</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {content.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                  target={component.href.startsWith("http") ? "_blank" : "_self"}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Projects</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/uses" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Uses</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/now" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Now</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+        {navigationLinks?.map((item) => (
+          <NavigationMenuItem key={item.title.trim()}>
+            {item.content ? (
+              <>
+                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {item.content.map((subItem) => (
+                      <ListItem
+                        key={subItem.href.trim()}
+                        title={subItem.title}
+                        href={subItem.href}
+                        target={subItem.href.startsWith("http") ? "_blank" : "_self"}
+                      >
+                        {subItem.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </>
+            ) : (
+              <Link href={item.href as string} legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.title}</NavigationMenuLink>
+              </Link>
+            )}
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );
