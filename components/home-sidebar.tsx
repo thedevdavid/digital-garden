@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Pencil } from "lucide-react";
 
-import { projects } from "@/lib/projectsData";
+import { projects } from "@/lib/projects-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,13 +53,20 @@ export function Sidebar({ className, ...props }: CardProps) {
             >
               <Pencil />
               <p className="ml-2 mr-auto text-sm font-medium leading-none">{project.title}</p>
-              <Image
-                src={project.imgSrc}
-                alt={project.title}
-                width={56}
-                height={56}
-                className="h-16 w-16 rounded-md object-cover"
-              />
+              {project.mediaType === "video" ? (
+                <video autoPlay loop muted playsInline className="h-16 w-16 rounded-md object-cover">
+                  <source src="/project-garden.webm" type="video/webm" />
+                  <source src="/project-garden.mp4" type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={project.mediaSrc}
+                  alt={project.title}
+                  width={56}
+                  height={56}
+                  className="h-16 w-16 rounded-md object-cover"
+                />
+              )}
             </Link>
           ))}
         </CardContent>

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { format, parseISO } from "date-fns";
 import { AlertTriangle } from "lucide-react";
 
-import { hardware, software } from "@/lib/usesData";
+import { hardware, software } from "@/lib/uses-data";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

@@ -66,7 +66,7 @@ export default async function PostPage({ params }: PostProps) {
       <nav aria-label="Breadcrumb">
         <ol role="list" className="hidden items-center gap-1 text-sm text-muted-foreground md:flex md:flex-row">
           <li>
-            <Link href="/" className="block transition hover:text-muted-foreground/70">
+            <Link href="/" className="block transition hover:text-muted-foreground/70" aria-label="Go to Home">
               <span className="sr-only"> Home </span>
               <Home size={14} />
             </Link>
@@ -105,7 +105,7 @@ export default async function PostPage({ params }: PostProps) {
           </li>
         </ol>
       </nav>
-      <div className="grid lg:grid-flow-col">
+      <div className="flex flex-col lg:flex-row">
         <div className="lg:hidden">
           <div className="mb-4 mt-1 text-sm leading-snug text-muted-foreground">
             <p className="mb-2">{`${post.readTimeMinutes} mins read`}</p>
@@ -142,7 +142,7 @@ export default async function PostPage({ params }: PostProps) {
             </AccordionItem>
           </Accordion>
         </div>
-        <article className="prose max-w-7xl dark:prose-invert prose-headings:mb-3 prose-headings:mt-8 prose-headings:font-heading prose-headings:font-bold prose-headings:leading-tight hover:prose-a:text-muted-foreground prose-a:prose-headings:no-underline lg:max-w-2xl">
+        <article className="prose max-w-7xl dark:prose-invert prose-headings:mb-3 prose-headings:mt-8 prose-headings:font-heading prose-headings:font-bold prose-headings:leading-tight hover:prose-a:text-muted-foreground prose-a:prose-headings:no-underline lg:mr-auto lg:max-w-2xl">
           <h1 className="mb-2 font-heading">{post.title}</h1>
           {post.description && (
             <p className="mb-2 mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>
@@ -151,9 +151,9 @@ export default async function PostPage({ params }: PostProps) {
           <Mdx code={post.body.code} />
           <hr className="my-4" />
           {post.tags && (
-            <ul className="m-0 flex list-none flex-row space-x-2 p-0 text-sm text-muted-foreground">
+            <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
               {post.tags.map((tag: any) => (
-                <li className="p-0" key={tag.trim()}>
+                <li className="inline-block p-0" key={tag.trim()}>
                   {tag}
                 </li>
               ))}
