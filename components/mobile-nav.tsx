@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { MobileLinkProps } from "@/types";
 import { Menu } from "lucide-react";
 
 import siteMetadata from "@/lib/metadata";
@@ -27,7 +28,7 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent size="content" position="bottom" className="pr-0">
-        <MobileLink href="/" className="flex items-center" onOpenChange={setOpen}>
+        <MobileLink href="/" className="flex items-center" onOpenChange={setOpen} aria-label="Go to Home">
           <span className="font-bold">{siteMetadata.title.default}</span>
         </MobileLink>
         <ScrollArea className="my-4 max-h-96 overflow-y-scroll pb-10">
@@ -53,12 +54,6 @@ export function MobileNav() {
       </SheetContent>
     </Sheet>
   );
-}
-
-interface MobileLinkProps extends LinkProps {
-  onOpenChange?: (open: boolean) => void;
-  children: React.ReactNode;
-  className?: string;
 }
 
 function MobileLink({ href, onOpenChange, className, children, ...props }: MobileLinkProps) {

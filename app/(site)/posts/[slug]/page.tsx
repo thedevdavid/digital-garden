@@ -66,7 +66,7 @@ export default async function PostPage({ params }: PostProps) {
       <nav aria-label="Breadcrumb">
         <ol role="list" className="hidden items-center gap-1 text-sm text-muted-foreground md:flex md:flex-row">
           <li>
-            <Link href="/" className="block transition hover:text-muted-foreground/70">
+            <Link href="/" className="block transition hover:text-muted-foreground/70" aria-label="Go to Home">
               <span className="sr-only"> Home </span>
               <Home size={14} />
             </Link>

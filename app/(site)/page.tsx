@@ -86,7 +86,7 @@ export default async function Home() {
                 src="/avatar-home.png"
                 alt={defaultAuthor.name}
                 width={400}
-                height={400}
+                height={498}
                 className="h-auto w-72 -rotate-1 hover:rotate-3"
               />
               <div className="text-center">

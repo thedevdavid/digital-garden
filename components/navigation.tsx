@@ -43,8 +43,12 @@ export function Navigation() {
       >
         <div className="flex items-center justify-center space-x-4 rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white ">
           <Avatar asChild>
-            <Link href="/">
-              <AvatarImage className="rounded-full border border-black hover:opacity-60" src="/avatar.png" />
+            <Link href="/" aria-label="Go to Home">
+              <AvatarImage
+                className="rounded-full border border-black hover:opacity-60"
+                src="/avatar.png"
+                alt={defaultAuthor.name}
+              />
               <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
             </Link>
           </Avatar>
@@ -57,8 +61,12 @@ export function Navigation() {
       <header className="mx-auto mt-4 hidden h-16 w-full max-w-6xl px-4 sm:block lg:px-0">
         <div className="container flex items-center justify-between rounded-lg border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
           <Avatar asChild>
-            <Link href="/">
-              <AvatarImage className="rounded-full border border-black hover:opacity-60" src="/avatar.png" />
+            <Link href="/" aria-label="Go to Home">
+              <AvatarImage
+                className="rounded-full border border-black hover:opacity-60"
+                src="/avatar.png"
+                alt={defaultAuthor.name}
+              />
               <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
             </Link>
           </Avatar>

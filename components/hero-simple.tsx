@@ -18,7 +18,7 @@ export function HeroSimple({ title, subtitle }: HeroProps) {
       </h1>
       <div className="flex content-center items-center justify-center">
         <Avatar>
-          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" />
+          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" alt={defaultAuthor.name} />
           <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
         </Avatar>
         <p className="ml-2 font-bold text-muted-foreground">{defaultAuthor.handle}</p>

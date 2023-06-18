@@ -17,7 +17,7 @@ export function HeroImage({ title, subtitle }: HeroProps) {
     <div className="container flex max-w-6xl flex-col items-center md:flex-row">
       <div className="mb-4 flex max-w-xl self-start sm:hidden">
         <Avatar>
-          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" />
+          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" alt={defaultAuthor.name} />
           <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
         </Avatar>
       </div>
