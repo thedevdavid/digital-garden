@@ -2,7 +2,9 @@
 
 import * as React from "react";
 
+import { defaultAuthor } from "@/lib/metadata";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface HeroProps {
   title: string;
@@ -12,7 +14,13 @@ interface HeroProps {
 export function HeroVideo({ title, subtitle }: HeroProps) {
   return (
     <div className="container flex max-w-6xl flex-col items-center md:flex-row">
-      <div className="w-4/12">
+      <div className="mb-4 flex max-w-xl self-start sm:hidden">
+        <Avatar>
+          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" />
+          <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
+        </Avatar>
+      </div>
+      <div className="hidden lg:block lg:w-4/12">
         <AspectRatio ratio={9 / 12}>
           <div className="rounded-lg bg-black shadow-lg">
             <iframe

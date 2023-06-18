@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Pencil } from "lucide-react";
 
-import { projects } from "@/lib/projectsData";
+import { projects } from "@/lib/projects-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
