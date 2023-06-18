@@ -66,7 +66,7 @@ export default async function Home() {
               See all posts <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-          <aside className="flex w-full flex-col items-center justify-center md:block">
+          <aside className="w-full">
             <Sidebar />
           </aside>
         </div>

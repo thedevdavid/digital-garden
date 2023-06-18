@@ -4,6 +4,7 @@ import { defaultAuthor } from "@/lib/metadata";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CommandDialogComponent } from "@/components/command-dialog";
 import Footer from "@/components/footer";
+import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Navbar } from "@/components/navbar";
 
@@ -14,8 +15,20 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <div className="">
-      <header className="mx-auto mt-4 h-16 w-full max-w-6xl px-4 lg:px-0">
-        <div className="container flex items-center justify-between rounded-lg border border-black/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
+      <header className="container fixed bottom-4 left-0 z-50 mx-auto flex items-center justify-center space-x-4 rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white sm:hidden">
+        <Avatar asChild>
+          <Link href="/">
+            <AvatarImage className="rounded-full border border-black hover:opacity-60" src="/avatar.png" />
+            <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
+          </Link>
+        </Avatar>
+        <CommandDialogComponent />
+        <nav>
+          <MobileNav />
+        </nav>
+      </header>
+      <header className="mx-auto mt-4 hidden h-16 w-full max-w-6xl px-4 sm:block lg:px-0">
+        <div className="container flex items-center justify-between rounded-lg border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
           <Avatar asChild>
             <Link href="/">
               <AvatarImage className="rounded-full border border-black hover:opacity-60" src="/avatar.png" />

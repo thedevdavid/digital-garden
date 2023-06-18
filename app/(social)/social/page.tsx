@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Github, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
-import { projects } from "@/lib/projectsData";
+import { projects } from "@/lib/projects-data";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/cta";
 import { Signature } from "@/components/signature";
