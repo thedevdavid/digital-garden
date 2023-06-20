@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { MobileLinkProps } from "@/types";
 import { Menu } from "lucide-react";
 
@@ -57,15 +57,35 @@ export function MobileNav() {
 }
 
 function MobileLink({ href, onOpenChange, className, children, ...props }: MobileLinkProps) {
-  const router = useRouter();
+  const pathname = usePathname();
+  if (href.toString().startsWith("http")) {
+    return (
+      <a
+        href={href.toString()}
+        onClick={() => {
+          onOpenChange?.(false);
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(className)}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
     <Link
       href={href}
       onClick={() => {
-        router.push(href.toString());
         onOpenChange?.(false);
       }}
-      className={cn(className)}
+      className={cn(
+        className,
+        href.toString() !== "/" &&
+          pathname.substring(2).startsWith(href.toString().substring(2)) &&
+          "font-semibold text-accent-foreground"
+      )}
       {...props}
     >
       {children}

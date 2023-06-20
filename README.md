@@ -32,6 +32,8 @@ If you love this template and/or use it, please give it a star on GitHub. This w
     - [Image optimization](#image-optimization)
 - [Examples](#examples)
 - [Features & Roadmap](#features--roadmap)
+- [Inspiration & Mentions](#inspiration--mentions)
+- [Support](#support)
 
 ## Motivation
 
@@ -41,7 +43,7 @@ So I decided to build a solution that I would use myself. This is the result.
 
 ## Getting Started
 
-Here's a [link to a website customizing commit](https://github.com/thedevdavid/website-2023/commit/fb10942d424a1389f9c4c1605849e45ff718656d) with all the changes.
+If you want to see how I set up this template for my own digital garden, you can check out [this commit](https://github.com/thedevdavid/website-2023/commit/fb10942d424a1389f9c4c1605849e45ff718656d) with all the changes.
 
 1. Use the repo as a template
 2. Install dependencies with `pnpm install`
@@ -112,6 +114,8 @@ You can choose between 3 different hero variants to use in `app/(site)/page.tsx`
 
 Optimize images in seconds for free with ImageOptim. Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
 
+Note: DO NOT overdo it. You can easily make images look bad with lossy compression algorithms.
+
 ## Examples
 
 - [https://davidlevai.com/](https://davidlevai.com/)
@@ -137,10 +141,13 @@ Create a PR and add your digital garden to this list if you're using the templat
 - [x] projects page
 - [x] about section on homepage
 - [x] search & command bar
-- [x] Vercel analytics (fathom, simplelytics, vercel)
+- [x] Vercel analytics
 - [ ] Design improvements (whitespace, layout, etc.)
+- [ ] 404, error, and loading pages
+- [ ] Code preview component
+- [ ] Code highlight improvements (copy code, theme)
 - [ ] `manifest.json`
-- [ ] newsletter integration
+- [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Post series
 - [ ] Hidden content (behind email subscription)
 - [ ] 100 lighthouse score
@@ -148,7 +155,7 @@ Create a PR and add your digital garden to this list if you're using the templat
 - [ ] Pagination
 - [ ] SEO improvements
 - [ ] Accessibility audit
-- [ ] Other analytics providers (fathom, simplelytics, etc.)
+- [ ] Other analytics providers (fathom, simplelytics, plausible, umami, etc)
 - [ ] TypeScript fixes
 - [ ] Redesign uses page
 - [ ] Redesign projects page
@@ -156,6 +163,7 @@ Create a PR and add your digital garden to this list if you're using the templat
 - [ ] general cleanup
 - [ ] implement content security policies
 - [ ] implement a videoask-like solution for the hero section
+- [ ] multi-author support (?)
 - [ ] Post like counter (?)
 - [ ] Visitor counter (?)
 - [ ] code playground instead of code highlighting (?)
