@@ -8,7 +8,7 @@ export const projects = [
   },
   {
     title: "Developer Digital Garden",
-    description: `An open source digital gardening template for developers using Next.js app router, MDX, Contentlayer, Tailwind CSS, @shadcn/ui, Lucide Icons, and more.`,
+    description: `An open source blogging (digital gardening) template for developers using Next.js app router, MDX, Contentlayer, Tailwind CSS, @shadcn/ui, Lucide Icons, and more.`,
     href: "https://github.com/thedevdavid/digital-garden",
     mediaSrc: "/project-garden.mp4",
     mediaType: "video",
