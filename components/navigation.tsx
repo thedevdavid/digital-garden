@@ -37,43 +37,32 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed -bottom-32 z-20 mx-auto mb-4 h-12 w-full px-4 animate-out delay-500 sm:hidden",
+          "fixed -bottom-32 z-20 mx-auto mb-4 h-12 w-full px-4 animate-out delay-500 sm:static sm:z-auto sm:mb-0 sm:mt-4 sm:h-16 sm:max-w-6xl sm:transition-none sm:delay-0 lg:px-0",
           visible && "bottom-0 left-0 animate-in"
         )}
       >
-        <div className="flex items-center justify-center space-x-4 rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white ">
-          <Link href="/" aria-label="Go to Home">
+        <div className="flex items-center rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm sm:container dark:border-white dark:bg-black/30 dark:text-white sm:justify-between sm:rounded-lg">
+          <Link href="/" aria-label="Go to Home" className="order-1">
             <Image
-              className="aspect-square h-10 w-10 rounded-full border border-black hover:opacity-60"
+              className="aspect-square h-auto w-10 rounded-full border border-black hover:opacity-60"
               width={40}
               height={40}
               src="/avatar.png"
               alt={defaultAuthor.name}
             />
           </Link>
-          <CommandDialogComponent />
-          <ModeToggle />
-          <nav>
-            <MobileNav />
-          </nav>
-        </div>
-      </header>
-      <header className="mx-auto mt-4 hidden h-16 w-full max-w-6xl px-4 sm:block lg:px-0">
-        <div className="container flex items-center justify-between rounded-lg border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
-          <Link href="/" aria-label="Go to Home">
-            <Image
-              className="aspect-square h-10 w-10 rounded-full border border-black hover:opacity-60"
-              width={40}
-              height={40}
-              src="/avatar.png"
-              alt={defaultAuthor.name}
-            />
-          </Link>
-          <nav className="ml-auto space-x-6 text-sm font-medium">
-            <Navbar />
-          </nav>
-          <CommandDialogComponent />
-          <ModeToggle />
+          <div className="order-3 sm:order-2 sm:ml-auto">
+            <nav className="ml-auto hidden space-x-6 text-sm font-medium sm:block sm:w-full">
+              <Navbar />
+            </nav>
+            <nav className="sm:hidden">
+              <MobileNav />
+            </nav>
+          </div>
+          <div className="order-2 flex w-full items-center sm:order-3 sm:w-fit">
+            <CommandDialogComponent />
+            <ModeToggle />
+          </div>
         </div>
       </header>
     </>
