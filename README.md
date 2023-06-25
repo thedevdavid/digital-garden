@@ -1,11 +1,11 @@
-# Modern Developer Digital Garden Starter
+# Modern Developer Blog Template (Digital Garden Starter)
 
 ![Image2](/screenshots/garden2.png)
 [More screenshots here](/screenshots/)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/thedevdavid/digital-garden)
 
-An open source digital gardening template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
+An open source blogging (digital gardening) template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
 
 This project is from developers for developers. Please feel free to report a bug, discuss the current state, submit ideas for improvements, submit a fix, propose new features, or whatever you want. All contributions are welcome! Read more at the [contributing guidelines](./CONTRIBUTING.md).
 
@@ -37,7 +37,7 @@ If you love this template and/or use it, please give it a star on GitHub. This w
 
 ## Motivation
 
-As a developer who creates content, I want to have a digital garden where I can share my thoughts and ideas with the world. Now, there's not really a "perfect solution" for this currently. With included analytics, SEO, email subscribtions, modern tooling, simple design, etc. We either have to build one from scratch, use a design template and code the features, or use a CMS/no-code tool.
+As a developer who creates content, I want to have a blog & digital garden where I can share my thoughts and ideas with the world. Now, there's not really a "perfect solution" for this currently. With included analytics, SEO, email subscriptions, modern tooling, simple design, etc. We either have to build one from scratch, use a design template and code the features, or use a CMS/no-code tool.
 
 So I decided to build a solution that I would use myself. This is the result.
 
@@ -71,7 +71,7 @@ Editing list pages is done in the `lib` folder.
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
 
 1. Update `package.json` author information
-2. Set up the `NEXT_PUBLIC_BASE_URL` environment variable on Vercel to point to your digital garden's root URL
+2. Set up the `NEXT_PUBLIC_BASE_URL` environment variable on Vercel to point to your website's root URL
 3. Build and deploy
 
 ## Customization
@@ -120,7 +120,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 
 - [https://davidlevai.com/](https://davidlevai.com/)
 
-Create a PR and add your digital garden to this list if you're using the template!
+Create a PR and add your blog to this list if you're using the template!
 
 ## Features & Roadmap
 

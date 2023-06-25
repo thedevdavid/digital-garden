@@ -27,7 +27,7 @@ export function MobileNav() {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent size="content" position="bottom" className="pr-0">
+      <SheetContent side="bottom" className="pr-0">
         <MobileLink href="/" className="flex items-center" onOpenChange={setOpen} aria-label="Go to Home">
           <span className="font-bold">{siteMetadata.title.default}</span>
         </MobileLink>

@@ -3,9 +3,11 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { DialogProps } from "@radix-ui/react-alert-dialog";
-import { Calendar, Mail, Monitor, Pencil, Twitter, User, Youtube } from "lucide-react";
+import { File, Github, Laptop, Mail, Moon, Sun, Twitter } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { navigationLinks } from "@/lib/navigation-links";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,17 +23,27 @@ import {
 export function CommandDialogComponent({ ...props }: DialogProps) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
+  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && e.metaKey) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
         setOpen((open) => !open);
       }
     };
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, [open, router]);
+  }, []);
+
+  const navigate = (href: string) => {
+    if (href.startsWith("http")) {
+      window.open(href, "_blank");
+    } else {
+      router.push(href);
+    }
+  };
 
   const runCommand = React.useCallback((command: () => unknown) => {
     setOpen(false);
@@ -58,36 +70,37 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Content">
-            <CommandItem
-              onSelect={() => {
-                runCommand(() => router.push("/posts" as string));
-              }}
-            >
-              <Pencil className="mr-2 h-4 w-4" />
-              <span>Blog</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                runCommand(() => router.push("/uses" as string));
-              }}
-            >
-              <Monitor className="mr-2 h-4 w-4" />
-              <span>Uses</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                runCommand(() => router.push("/now" as string));
-              }}
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              <span>Now</span>
-            </CommandItem>
+            {navigationLinks.map((item) =>
+              item.content ? (
+                item.content.map((subItem) => (
+                  <CommandItem
+                    key={subItem.title.trim()}
+                    onSelect={() => {
+                      runCommand(() => navigate(subItem.href as string));
+                    }}
+                  >
+                    <File className="mr-2 h-4 w-4" />
+                    <span>{subItem.title}</span>
+                  </CommandItem>
+                ))
+              ) : (
+                <CommandItem
+                  key={item.title.trim()}
+                  onSelect={() => {
+                    runCommand(() => navigate(item.href as string));
+                  }}
+                >
+                  <File className="mr-2 h-4 w-4" />
+                  <span>{item.title}</span>
+                </CommandItem>
+              )
+            )}
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Social">
             <CommandItem
               onSelect={() => {
-                runCommand(() => window.open(defaultAuthor.social.twitter, "_blank"));
+                runCommand(() => navigate(defaultAuthor.social.twitter));
               }}
             >
               <Twitter className="mr-2 h-4 w-4" />
@@ -95,19 +108,26 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
             </CommandItem>
             <CommandItem
               onSelect={() => {
-                runCommand(() => window.open(defaultAuthor.social.youtube, "_blank"));
+                runCommand(() => navigate(defaultAuthor.social.github));
               }}
             >
-              <Youtube className="mr-2 h-4 w-4" />
-              <span>YouTube</span>
+              <Github className="mr-2 h-4 w-4" />
+              <span>Github</span>
             </CommandItem>
-            <CommandItem
-              onSelect={() => {
-                runCommand(() => window.open(siteMetadata.newsletterUrl, "_blank"));
-              }}
-            >
-              <Mail className="mr-2 h-4 w-4" />
-              <span>Newsletter</span>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Theme">
+            <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
+              <Sun className="mr-2 h-4 w-4" />
+              Light
+            </CommandItem>
+            <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
+              <Moon className="mr-2 h-4 w-4" />
+              Dark
+            </CommandItem>
+            <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
+              <Laptop className="mr-2 h-4 w-4" />
+              System
             </CommandItem>
           </CommandGroup>
         </CommandList>
