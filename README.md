@@ -37,7 +37,7 @@ If you love this template and/or use it, please give it a star on GitHub. This w
 
 ## Motivation
 
-As a developer who creates content, I want to have a digital garden where I can share my thoughts and ideas with the world. Now, there's not really a "perfect solution" for this currently. With included analytics, SEO, email subscribtions, modern tooling, simple design, etc. We either have to build one from scratch, use a design template and code the features, or use a CMS/no-code tool.
+As a developer who creates content, I want to have a digital garden where I can share my thoughts and ideas with the world. Now, there's not really a "perfect solution" for this currently. With included analytics, SEO, email subscriptions, modern tooling, simple design, etc. We either have to build one from scratch, use a design template and code the features, or use a CMS/no-code tool.
 
 So I decided to build a solution that I would use myself. This is the result.
 
