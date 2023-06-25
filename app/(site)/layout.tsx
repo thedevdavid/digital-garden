@@ -8,9 +8,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
+      <a
+        className="absolute left-0 top-0 z-[9999] m-3 block -translate-y-96 overflow-hidden bg-white p-3 text-2xl text-black transition focus:translate-y-0"
+        href="#main-content"
+      >
+        Skip to Content
+      </a>
       <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <Footer />
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
