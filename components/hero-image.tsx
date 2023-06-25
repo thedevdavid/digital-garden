@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface HeroProps {
   title: string;
@@ -16,10 +15,13 @@ export function HeroImage({ title, subtitle }: HeroProps) {
   return (
     <div className="container flex max-w-6xl flex-col items-center md:flex-row">
       <div className="mb-4 flex max-w-xl self-start sm:hidden">
-        <Avatar>
-          <AvatarImage className="rounded-full border border-primary" src="/avatar.png" alt={defaultAuthor.name} />
-          <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
-        </Avatar>
+        <Image
+          className="aspect-square h-10 w-10 rounded-full border border-black"
+          width={40}
+          height={40}
+          src="/avatar.png"
+          alt={defaultAuthor.name}
+        />
       </div>
       <div className="flex max-w-xl flex-col lg:mr-auto">
         <h1 className="font-heading text-5xl font-bold tracking-tight sm:text-6xl">{title}</h1>
