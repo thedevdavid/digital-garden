@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CommandDialogComponent } from "@/components/command-dialog";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -42,17 +42,17 @@ export function Navigation() {
         )}
       >
         <div className="flex items-center justify-center space-x-4 rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white ">
-          <Avatar asChild>
-            <Link href="/" aria-label="Go to Home">
-              <AvatarImage
-                className="rounded-full border border-black hover:opacity-60"
-                src="/avatar.png"
-                alt={defaultAuthor.name}
-              />
-              <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
-            </Link>
-          </Avatar>
+          <Link href="/" aria-label="Go to Home">
+            <Image
+              className="aspect-square h-10 w-10 rounded-full border border-black hover:opacity-60"
+              width={40}
+              height={40}
+              src="/avatar.png"
+              alt={defaultAuthor.name}
+            />
+          </Link>
           <CommandDialogComponent />
+          <ModeToggle />
           <nav>
             <MobileNav />
           </nav>
@@ -60,16 +60,15 @@ export function Navigation() {
       </header>
       <header className="mx-auto mt-4 hidden h-16 w-full max-w-6xl px-4 sm:block lg:px-0">
         <div className="container flex items-center justify-between rounded-lg border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm dark:border-white dark:bg-black/30 dark:text-white">
-          <Avatar asChild>
-            <Link href="/" aria-label="Go to Home">
-              <AvatarImage
-                className="rounded-full border border-black hover:opacity-60"
-                src="/avatar.png"
-                alt={defaultAuthor.name}
-              />
-              <AvatarFallback>{defaultAuthor.name}</AvatarFallback>
-            </Link>
-          </Avatar>
+          <Link href="/" aria-label="Go to Home">
+            <Image
+              className="aspect-square h-10 w-10 rounded-full border border-black hover:opacity-60"
+              width={40}
+              height={40}
+              src="/avatar.png"
+              alt={defaultAuthor.name}
+            />
+          </Link>
           <nav className="ml-auto space-x-6 text-sm font-medium">
             <Navbar />
           </nav>
