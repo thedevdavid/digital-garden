@@ -65,24 +65,6 @@ export function Navigation() {
           </div>
         </div>
       </header>
-      {/* <header className="">
-        <div className="">
-          <Link href="/" aria-label="Go to Home">
-            <Image
-              className="aspect-square h-10 w-10 rounded-full border border-black hover:opacity-60"
-              width={40}
-              height={40}
-              src="/avatar.png"
-              alt={defaultAuthor.name}
-            />
-          </Link>
-          <nav className="ml-auto space-x-6 text-sm font-medium">
-            <Navbar />
-          </nav>
-          <CommandDialogComponent />
-          <ModeToggle />
-        </div>
-      </header> */}
     </>
   );
 }
