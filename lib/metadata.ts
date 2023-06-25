@@ -17,7 +17,7 @@ export const defaultAuthor = {
   company: "Unicorns & Co.",
 };
 
-const defaultTitle = `${defaultAuthor.name}'s Digital Garden`;
+const defaultTitle = `${defaultAuthor.name}'s Blog`;
 const defaultDescription = `I'm ${defaultAuthor.name}. Building hackin’ cool digital products around the world 🌴.`;
 
 const siteMetadata = {

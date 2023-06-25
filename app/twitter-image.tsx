@@ -28,7 +28,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        {`${defaultAuthor.handle}'s digital garden`}
+        {`${defaultAuthor.handle}'s blog`}
       </div>
     ),
     // ImageResponse options
