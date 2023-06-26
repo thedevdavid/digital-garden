@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/server";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 
 export const runtime = "edge";
 
@@ -19,16 +19,52 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 128,
-          background: "white",
-          width: "100%",
-          height: "100%",
           display: "flex",
+          height: "100%",
+          width: "100%",
           alignItems: "center",
           justifyContent: "center",
+          letterSpacing: "-.02em",
+          fontWeight: 700,
+          background: "white",
         }}
       >
-        {`${defaultAuthor.handle}'s blog`}
+        <div
+          style={{
+            right: 42,
+            bottom: 42,
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <span
+            style={{
+              marginLeft: 8,
+              fontSize: 20,
+            }}
+          >
+            {defaultAuthor.handle}
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            padding: "20px 50px",
+            margin: "0 42px",
+            fontSize: 40,
+            width: "auto",
+            maxWidth: 750,
+            textAlign: "center",
+            backgroundColor: "black",
+            color: "white",
+            lineHeight: 1.4,
+          }}
+        >
+          {siteMetadata.description}
+        </div>
       </div>
     ),
     // ImageResponse options
