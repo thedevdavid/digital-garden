@@ -58,7 +58,7 @@ export const SpotlightCard = ({ title, description, mediaSrc, mediaType, href }:
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex cursor-pointer flex-col justify-start overflow-hidden rounded-md border border-slate-200 bg-gradient-to-r from-slate-100  to-slate-50 shadow-md dark:border-slate-800 dark:from-slate-900 dark:to-slate-950"
+      className="relative flex cursor-pointer flex-col justify-start overflow-hidden -z-10 rounded-md border border-slate-200 bg-gradient-to-r from-slate-100  to-slate-50 shadow-md dark:border-slate-800 dark:from-slate-900 dark:to-slate-950"
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
