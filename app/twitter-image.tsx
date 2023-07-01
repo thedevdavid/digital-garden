@@ -1,12 +1,10 @@
 import { ImageResponse } from "next/server";
-import { allPosts } from "contentlayer/generated";
-import { format, parseISO } from "date-fns";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 
 export const runtime = "edge";
 
-export const alt = `Article by ${defaultAuthor.name}`;
+export const alt = siteMetadata.description;
 export const size = {
   width: 1200,
   height: 630,
@@ -15,15 +13,7 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function Image({ params }: { params: { slug: string } }) {
-  const post = await allPosts.find((post) => post.slug === params.slug);
-
-  if (!post) {
-    return {};
-  }
-
-  const date = post.lastUpdatedDate || post.publishedDate;
-
+export default async function Image() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
@@ -67,7 +57,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               lineHeight: 1.1,
             }}
           >
-            {post.title}
+            {siteMetadata.title.default}
           </p>
 
           <p
@@ -75,7 +65,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               fontSize: "20px",
             }}
           >
-            {format(parseISO(date), "LLLL d, yyyy")} &middot; {post.readTimeMinutes} min read
+            {siteMetadata.description}
           </p>
         </div>
       </div>
