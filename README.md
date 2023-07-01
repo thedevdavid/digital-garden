@@ -173,6 +173,7 @@ Create a PR and add your blog to this list if you're using the template!
 - [ ] keyboard-based navigation with hotkeys (?)
 - [ ] multiple layouts (sidebar, full-width, etc.) (?)
 - [ ] multilang support (?)
+- [ ] contributing docs
 
 ## Inspiration & Mentions
 
