@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Copy button component
 - Scroll-aware table of contets
+- Minimal hero variant
 
 ### Changed
 
