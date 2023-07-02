@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PostHeading } from "@/types";
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
@@ -11,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Mdx } from "@/components/mdx-components";
+import { TableOfContents } from "@/components/table-of-contents";
 
 interface PostProps {
   params: {
@@ -114,35 +114,17 @@ export default async function PostPage({ params }: PostProps) {
             {post.lastUpdatedDate && (
               <time> Last updated: {format(parseISO(post.lastUpdatedDate), "LLLL d, yyyy")}</time>
             )}
-            d
           </div>
           <Accordion type="single" collapsible>
             <AccordionItem value="table-of-contents">
               <AccordionTrigger>Table of Contents</AccordionTrigger>
               <AccordionContent>
-                <div className="flex items-center rounded-md">
-                  <ol className="list-none space-y-2" role="list">
-                    {post.headings.map((heading: PostHeading) => (
-                      <li key={heading.slug} className="list-none">
-                        <Link
-                          className={cn(
-                            "text-sm font-bold",
-                            heading.heading === 3 && "pl-6 font-normal",
-                            heading.heading === 4 && "pl-8 font-normal"
-                          )}
-                          href={`#${heading.slug}`}
-                        >
-                          {heading.text}
-                        </Link>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
+                <TableOfContents chapters={post.headings} />
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
-        <article className="prose max-w-7xl dark:prose-invert prose-headings:mb-3 prose-headings:mt-8 prose-headings:font-heading prose-headings:font-bold prose-headings:leading-tight hover:prose-a:text-muted-foreground prose-a:prose-headings:no-underline lg:mr-auto lg:max-w-2xl">
+        <article className="prose max-w-7xl dark:prose-invert hover:prose-a:text-accent-foreground prose-a:prose-headings:mb-3 prose-a:prose-headings:mt-8 prose-a:prose-headings:font-heading prose-a:prose-headings:font-bold prose-a:prose-headings:leading-tight prose-a:prose-headings:no-underline lg:mr-auto lg:max-w-2xl">
           <h1 className="mb-2 font-heading">{post.title}</h1>
           {post.description && (
             <p className="mb-2 mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>
@@ -166,20 +148,7 @@ export default async function PostPage({ params }: PostProps) {
               <CardTitle>Table of Contents</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4">
-              <div className="flex items-center rounded-md pl-2">
-                <ol className="list-none space-y-2" role="list">
-                  {post.headings.map((heading: PostHeading) => (
-                    <li key={heading.slug} className="list-none">
-                      <Link
-                        className={cn("text-sm font-bold", heading.heading === 3 && "pl-6 font-normal")}
-                        href={`#${heading.slug}`}
-                      >
-                        {heading.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+              <TableOfContents chapters={post.headings} />
             </CardContent>
             <Separator />
             <CardFooter>
