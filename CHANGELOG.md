@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Copy button component
+- Scroll-aware table of contets
 
 ### Changed
 
 - Fixed OG and Twitter images
+- Fixed autolink heading issues
 
 ### Removed
 
