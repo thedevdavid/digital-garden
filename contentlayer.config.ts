@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { Page } from "./lib/content-definitions/page";
 import { Post } from "./lib/content-definitions/post";
 
-export const HEADING_LINK_ANCHOR = `before:content-['#'] before:italic before:-ml-1 before:text-muted-foreground-100/0 hover:before:text-muted-foreground-100/50 pl-1 -ml-1`;
+export const HEADING_LINK_ANCHOR = `anchor-heading-link`;
 
 export default makeSource({
   contentDirPath: "./content",
