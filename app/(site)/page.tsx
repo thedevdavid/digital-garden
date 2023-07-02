@@ -8,6 +8,7 @@ import { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import CTA from "@/components/cta";
 import { HeroImage } from "@/components/hero-image";
+import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
