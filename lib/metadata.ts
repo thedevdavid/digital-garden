@@ -1,3 +1,5 @@
+import { SiteMetaData } from "@/types";
+
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const defaultAuthor = {
@@ -21,7 +23,7 @@ export const defaultAuthor = {
 const defaultTitle = `${defaultAuthor.name}'s Blog`;
 const defaultDescription = `I'm ${defaultAuthor.name}. Building hackin’ cool digital products around the world 🌴.`;
 
-const siteMetadata = {
+const siteMetadata: SiteMetaData = {
   title: {
     template: `%s | ${defaultTitle}`,
     default: defaultTitle,
@@ -30,6 +32,7 @@ const siteMetadata = {
   siteRepo: "https://github.com/thedevdavid/digital-garden",
   metadataBase: new URL(BASE_URL),
   newsletterUrl: "https://developreneur.davidlevai.com",
+  analyticsProvider: "umami",
 };
 
 export default siteMetadata;

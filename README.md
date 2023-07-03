@@ -92,7 +92,18 @@ You can edit navigation links in `lib/navigation-links.ts`.
 
 ### Analytics
 
-Vercel analytics is added. To configure, you need to enable it on [Vercel project dashboard](https://vercel.com/dashboard) by selecting your Project and then click the Analytics tab and click Enable from the dialog.
+#### Vercel
+
+To configure, you need to enable it on [Vercel project dashboard](https://vercel.com/dashboard) by selecting your Project and then click the Analytics tab and click Enable from the dialog.
+
+#### Umami
+
+Umami is a simple, easy to use, web analytics solution with self-hosting option! You can read more about it on [Umami website](https://umami.is/). (Hint: On [Railway](https://railway.app), you can self-host it low cost or even free)
+
+Configure:
+Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
+
+#### Others
 
 Supporting other analytics providers are planned. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
@@ -141,7 +152,8 @@ Create a PR and add your blog to this list if you're using the template!
 - [x] projects page
 - [x] about section on homepage
 - [x] search & command bar
-- [x] Vercel analytics
+- [x] Analytics: Vercel, Umami
+- [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] 404, error, and loading pages
 - [ ] Code preview component
@@ -155,7 +167,6 @@ Create a PR and add your blog to this list if you're using the template!
 - [ ] Pagination
 - [ ] SEO improvements
 - [ ] Accessibility audit
-- [ ] Other analytics providers (fathom, simplelytics, plausible, umami, etc)
 - [ ] TypeScript fixes
 - [ ] Redesign uses page
 - [ ] Redesign projects page
