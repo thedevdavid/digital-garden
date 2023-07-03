@@ -49,7 +49,7 @@ export function Navigation() {
             </Link>
           </div>
         )}
-        <div className="flex items-center rounded-full border border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm sm:container dark:border-white dark:bg-black/30 dark:text-white sm:justify-between sm:rounded-lg">
+        <div className="flex items-center rounded-full border-b border-primary/40 bg-white/30 bg-clip-padding px-4 py-2 shadow-md backdrop-blur-sm sm:container dark:bg-black/30 dark:text-white sm:justify-between sm:rounded-lg">
           <div className="order-1 flex flex-row items-center justify-start">
             <Link href="/" aria-label="Go to Home">
               <Image
