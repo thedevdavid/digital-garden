@@ -22,3 +22,17 @@ export interface MobileLinkProps extends LinkProps {
   children: React.ReactNode;
   className?: string;
 }
+
+export type AnalyticsProvider = "umami" | "vercel";
+
+export type SiteMetaData = {
+  title: {
+    template: string;
+    default: string;
+  };
+  description: string;
+  siteRepo: string;
+  metadataBase: URL;
+  newsletterUrl: string;
+  analyticsProvider: AnalyticsProvider;
+};
