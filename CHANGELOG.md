@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-07-03
+
+### Added
+
+- Copy button component
+- Scroll-aware table of contets
+- Minimal hero variant
+- Work availability status
+- Added Umami analytics
+
+### Changed
+
+- Fixed OG and Twitter images
+- Fixed autolink heading issues
+
+### Removed
+
+- Popover and tooltip components
+
 ## [0.3.2] - 2023-06-26
 
 ### Added

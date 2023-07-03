@@ -4,7 +4,7 @@ import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 
 export const runtime = "edge";
 
-export const alt = `About ${defaultAuthor.name}`;
+export const alt = siteMetadata.description;
 export const size = {
   width: 1200,
   height: 630,
@@ -19,29 +19,23 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
+          background: "linear-gradient(45deg, rgba(59, 178, 93, 0.20) 0%, rgba(59, 121, 178, 0.20) 100%)",
           display: "flex",
           height: "100%",
           width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "flex-start",
+          flexDirection: "column",
+          justifyContent: "space-between",
           letterSpacing: "-.02em",
-          fontWeight: 700,
-          background: "white",
+          padding: "64px 48px",
+          color: "#222",
         }}
       >
-        <div
-          style={{
-            right: 42,
-            bottom: 42,
-            position: "absolute",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <div style={{ display: "flex" }}>
           <span
             style={{
-              marginLeft: 8,
-              fontSize: 20,
+              fontSize: "24px",
+              fontWeight: 400,
             }}
           >
             {defaultAuthor.handle}
@@ -50,20 +44,29 @@ export default async function Image() {
         <div
           style={{
             display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            padding: "20px 50px",
-            margin: "0 42px",
-            fontSize: 40,
+            flexDirection: "column",
+            alignItems: "flex-start",
             width: "auto",
-            maxWidth: 750,
-            textAlign: "center",
-            backgroundColor: "black",
-            color: "white",
-            lineHeight: 1.4,
+            maxWidth: "70%",
           }}
         >
-          {siteMetadata.description}
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "48px",
+              lineHeight: 1.1,
+            }}
+          >
+            {siteMetadata.title.default}
+          </p>
+
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            {siteMetadata.description}
+          </p>
         </div>
       </div>
     ),
