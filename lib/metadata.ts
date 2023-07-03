@@ -15,6 +15,7 @@ export const defaultAuthor = {
   website: "https://nextjs.org",
   jobTitle: "Frontend Engineer & UI Designer",
   company: "Unicorns & Co.",
+  availableForWork: true,
 };
 
 const defaultTitle = `${defaultAuthor.name}'s Blog`;
