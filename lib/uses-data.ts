@@ -48,6 +48,16 @@ export const software = [
     href: "https://www.raycast.com/",
   },
   {
+    title: "Readwise (*)",
+    description: `Highlights and reader. I use it to save my highlights from Kindle, and the internet. Get 2 months free with this link. Their reader app is super cool.`,
+    href: "https://readwise.io/i/david9695",
+  },
+  {
+    title: "Shortform",
+    desription: "Book summaries. That's it.",
+    href: "https://www.shortform.com/",
+  },
+  {
     title: "Rize",
     description: `Tracking and analyzing my time. I use it to see how much time I spend on different projects, and distractions. lol.`,
     href: "https://rize.io/",
