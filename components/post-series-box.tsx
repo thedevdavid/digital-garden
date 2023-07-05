@@ -1,24 +1,14 @@
 import Link from "next/link";
-import { Post } from "@/.contentlayer/generated";
+import { PostSeries } from "@/types";
 
 import { cn } from "@/lib/utils";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-interface PostSeriesProps extends Post {
-  title: string;
-  posts: [
-    {
-      title: string;
-      slug: string;
-      status: string;
-      isCurrent: boolean;
-    }
-  ];
-}
+export type Props = {
+  data: PostSeries;
+};
 
-export const PostSeries = ({ data }: { data: any }) => {
+export const PostSeriesBox = ({ data }: Props) => {
   const currentIndex = data.posts.findIndex((post) => post.isCurrent) + 1;
 
   return (

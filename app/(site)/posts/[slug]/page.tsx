@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allPosts } from "contentlayer/generated";
+import { PostSeries, PostWithSeries, SeriesItem } from "@/types";
+import { allPosts, Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
@@ -10,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Mdx } from "@/components/mdx-components";
-import { PostSeries } from "@/components/post-series";
+import { PostSeriesBox } from "@/components/post-series-box";
 import { TableOfContents } from "@/components/table-of-contents";
 
 interface PostProps {
@@ -19,7 +20,7 @@ interface PostProps {
   };
 }
 
-async function getPostFromParams(params: PostProps["params"]) {
+async function getPostFromParams(params: PostProps["params"]): Promise<any> {
   const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -27,9 +28,9 @@ async function getPostFromParams(params: PostProps["params"]) {
   }
 
   if (post?.series) {
-    const seriesPosts = allPosts
+    const seriesPosts: SeriesItem[] = allPosts
       .filter((p) => p.series?.title === post.series?.title)
-      .sort((a, b) => Number(new Date(a.series!.order)) - Number(new Date(b.series!.order)))
+      .sort((a, b) => Number(a.series!.order) - Number(b.series!.order))
       .map((p) => {
         return {
           title: p.title,
@@ -39,7 +40,7 @@ async function getPostFromParams(params: PostProps["params"]) {
         };
       });
     if (seriesPosts.length > 0) {
-      return { ...post, series: { ...post.series, posts: seriesPosts } };
+      return { ...post, series: { ...post.series, posts: seriesPosts } as PostSeries };
     }
   }
 
@@ -148,9 +149,9 @@ export default async function PostPage({ params }: PostProps) {
             <p className="mb-2 mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>
           )}
           <hr className="my-4" />
-          {post.series && (
+          {post?.series && (
             <div className="not-prose">
-              <PostSeries data={post.series} />
+              <PostSeriesBox data={post.series} />
             </div>
           )}
           <Mdx code={post.body.code} />
