@@ -1,8 +1,8 @@
-import { SiteMetaData } from "@/types";
+import { AuthorType, SiteMetaData } from "@/types";
 
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
-export const defaultAuthor = {
+export const defaultAuthor: AuthorType = {
   name: "Amy Shields",
   handle: "@amyshieldsfake",
   social: {
@@ -18,6 +18,10 @@ export const defaultAuthor = {
   jobTitle: "Frontend Engineer & UI Designer",
   company: "Unicorns & Co.",
   availableForWork: true,
+  location: {
+    city: "Los Angeles",
+    media: "/losangeles.jpg",
+  },
 };
 
 const defaultTitle = `${defaultAuthor.name}'s Blog`;

@@ -48,3 +48,25 @@ export type SeriesItem = {
 export type PostSeries = Series & { posts: SeriesItem[] };
 
 export type PostWithSeries = Omit<Post, "series"> & { series: PostSeries };
+
+export type AuthorType = {
+  name: string;
+  handle: string;
+  social: {
+    github: string;
+    instagram: string;
+    linkedin: string;
+    tiktok: string;
+    twitter: string;
+    youtube: string;
+  };
+  email: string;
+  website: string;
+  jobTitle: string;
+  company: string;
+  availableForWork: boolean;
+  location: {
+    city: string;
+    media: string;
+  };
+};
