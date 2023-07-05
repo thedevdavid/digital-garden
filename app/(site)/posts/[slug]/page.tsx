@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Mdx } from "@/components/mdx-components";
+import { PostSeries } from "@/components/post-series";
 import { TableOfContents } from "@/components/table-of-contents";
 
 interface PostProps {
@@ -23,6 +24,23 @@ async function getPostFromParams(params: PostProps["params"]) {
 
   if (!post) {
     null;
+  }
+
+  if (post?.series) {
+    const seriesPosts = allPosts
+      .filter((p) => p.series?.title === post.series?.title)
+      .sort((a, b) => Number(new Date(a.series!.order)) - Number(new Date(b.series!.order)))
+      .map((p) => {
+        return {
+          title: p.title,
+          slug: p.slug,
+          status: p.status,
+          isCurrent: p.slug === post.slug,
+        };
+      });
+    if (seriesPosts.length > 0) {
+      return { ...post, series: { ...post.series, posts: seriesPosts } };
+    }
   }
 
   return post;
@@ -130,6 +148,11 @@ export default async function PostPage({ params }: PostProps) {
             <p className="mb-2 mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>
           )}
           <hr className="my-4" />
+          {post.series && (
+            <div className="not-prose">
+              <PostSeries data={post.series} />
+            </div>
+          )}
           <Mdx code={post.body.code} />
           <hr className="my-4" />
           {post.tags && (
