@@ -11,6 +11,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <a
         className="absolute left-0 top-0 z-[9999] m-3 block -translate-y-96 overflow-hidden bg-white p-3 text-2xl text-black transition focus:translate-y-0"
         href="#main-content"
+        aria-label="Skip to Content"
       >
         Skip to Content
       </a>

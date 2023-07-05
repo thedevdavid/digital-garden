@@ -1,4 +1,5 @@
 import { LinkProps } from "next/link";
+import { Post, Series } from "@/.contentlayer/generated";
 
 export interface PostHeading {
   heading: number;
@@ -36,3 +37,14 @@ export type SiteMetaData = {
   newsletterUrl: string;
   analyticsProvider: AnalyticsProvider;
 };
+
+export type SeriesItem = {
+  title: string;
+  slug: Post["slug"];
+  status: Post["status"];
+  isCurrent: boolean;
+};
+
+export type PostSeries = Series & { posts: SeriesItem[] };
+
+export type PostWithSeries = Omit<Post, "series"> & { series: PostSeries };

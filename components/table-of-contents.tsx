@@ -28,7 +28,7 @@ export function TableOfContents({ chapters }: TocProps) {
     );
 
     chapters.forEach((chapter) => {
-      const element = document.querySelector(`#${chapter.slug}`);
+      const element = document.getElementById(chapter.slug);
       if (element) {
         observer.observe(element);
       }
