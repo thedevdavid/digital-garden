@@ -7,8 +7,6 @@
 
 An open source blogging (digital gardening) template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
 
-This project is from developers for developers. Please feel free to report a bug, discuss the current state, submit ideas for improvements, submit a fix, propose new features, or whatever you want. All contributions are welcome! Read more at the [contributing guidelines](./CONTRIBUTING.md).
-
 If you love this template and/or use it, please give it a star on GitHub. This will help more people discover it, thus help improving the template.
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/thedevdavid/digital-garden?style=social)
@@ -32,6 +30,9 @@ If you love this template and/or use it, please give it a star on GitHub. This w
     - [Image optimization](#image-optimization)
 - [Examples](#examples)
 - [Features & Roadmap](#features--roadmap)
+- [Contributing](#contributing)
+  - [Contributors](#contributors)
+  - [How?](#how)
 - [Inspiration & Mentions](#inspiration--mentions)
 - [Support](#support)
 
@@ -47,12 +48,13 @@ If you want to see how I set up this template for my own digital garden, you can
 
 1. Use the repo as a template
 2. Install dependencies with `pnpm install`
-3. Edit `utils/metadata.ts` with your information
-4. Edit `utils/usesData.ts` with your information
-5. Edit `utils/projectsData.ts` with your information
-6. Edit `content/pages/now` with your information
-7. Edit `content/pages/about` with your information
-8. Run the development server with `pnpm dev`
+3. Edit `utils/metadata.ts` with your information and general settings
+4. Edit `utils/uses-data.ts` with software & hardware you use
+5. Edit `utils/projects-data.ts` with your projects
+6. Edit `utils/navigation-links.ts` with the links you want in the navigation
+7. Edit `content/pages/now` with your availability
+8. Edit `content/pages/about` with your bio
+9. Run the development server with `pnpm dev`
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
@@ -71,8 +73,11 @@ Editing list pages is done in the `lib` folder.
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
 
 1. Update `package.json` author information
-2. Set up the `NEXT_PUBLIC_BASE_URL` environment variable on Vercel to point to your website's root URL
-3. Build and deploy
+2. Publish your repo to GitHub
+3. Create a new project on Vercel and import your repo
+4. Set up the `NEXT_PUBLIC_BASE_URL` environment variable on Vercel to point to your website's root URL
+5. If you plan to use [analytics](#analytics) and/or [newsletter](#newsletter-subscription) providers, set up the respective environment variables on Vercel
+6. Build and deploy 🎉
 
 ## Customization
 
@@ -84,9 +89,17 @@ This project uses [Inter](https://rsms.me/inter/) as the default font. You can c
 
 The project uses Tailwind colors and @shadcn/ui config. Customize the colors on `globals.css`.
 
+### Signature
+
+There's a signature component to use in the footer. You can edit the signature on `components/signature.tsx`. I used Figma to write the signature with `Caveat` font and exported it as SVG. You can do the same and update the SVG in the component.
+
+### Images
+
+Images and other media files are located in `public/` directory. You can use them in your content by using the `/<filename>.<ext>` path.
+
 ### Metadata
 
-You can change the metadata in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
+You can change the metadata and author details in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
 
 You can edit navigation links in `lib/navigation-links.ts`.
 
@@ -98,14 +111,14 @@ To configure, you need to enable it on [Vercel project dashboard](https://vercel
 
 #### Umami
 
-Umami is a simple, easy to use, web analytics solution with self-hosting option! You can read more about it on [Umami website](https://umami.is/). (Hint: On [Railway](https://railway.app), you can self-host it low cost or even free)
+Umami is a simple, easy to use, web analytics solution with self-hosting option! You can read more about it on [Umami website](https://umami.is/). _(Hint: On [Railway](https://railway.app), you can self-host it low cost or even free)_.
 
 Configure:
 Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
 
 #### Others
 
-Supporting other analytics providers are planned. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+Supporting other analytics providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ### Newsletter subscription
 
@@ -115,9 +128,10 @@ _WIP_ as I'm still deciding which email tools to support. Feel free to open an i
 
 You can choose between 3 different hero variants to use in `app/(site)/page.tsx` by changing the imported hero component.
 
-1. `HeroSimple` - A simple centered hero section with image, title, socials, and subtitle.
+1. `HeroSimple` - A simple centered hero section with image, title, and subtitle.
 2. `HeroVideo` - 2 column hero section with Videoask embed on one side and title and subtitle on the other.
-3. `HeroImage` - 2 column hero section with image on one side and title, socials, and subtitle on the other.
+3. `HeroImage` - 2 column hero section with image on one side and title, and subtitle on the other.
+4. `HeroMinimal` - small hero section name & job title
 
 ### Other tips & tricks
 
@@ -131,7 +145,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 
 - [https://davidlevai.com/](https://davidlevai.com/)
 
-Create a PR and add your blog to this list if you're using the template!
+**Create a PR and add your blog to this list if you're using the template!**
 
 ## Features & Roadmap
 
@@ -155,16 +169,20 @@ Create a PR and add your blog to this list if you're using the template!
 - [x] Analytics: Vercel, Umami
 - [x] Post series
 - [x] Not found page
-- [ ] Docs rework
-- [ ] hero title and subtitle text HTML support(?)
+- [x] contributing docs
+- [x] Docs refresh
 - [ ] Social sharing buttons
+- [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
+- [ ] Tags, categories
+- [ ] Post series page
+- [ ] Layouts/templates system
+- [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
-- [ ] 404, error, and loading pages
+- [ ] error, and loading pages
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
 - [ ] `manifest.json`
-- [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Hidden content (behind email subscription)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
@@ -178,16 +196,38 @@ Create a PR and add your blog to this list if you're using the template!
 - [ ] general cleanup
 - [ ] implement content security policies
 - [ ] implement a videoask-like solution for the hero section
+- [ ] RSS feed improvements (image, description, etc.)
 - [ ] multi-author support (?)
 - [ ] Post like counter (?)
 - [ ] Visitor counter (?)
 - [ ] code playground instead of code highlighting (?)
-- [ ] Categories and/or tags (?)
 - [ ] Commenting system (?)
 - [ ] keyboard-based navigation with hotkeys (?)
-- [ ] multiple layouts (sidebar, full-width, etc.) (?)
 - [ ] multilang support (?)
-- [ ] contributing docs
+
+## Contributing
+
+### Contributors
+
+- @thedevdavid
+- @br4adam
+
+This project is from developers for developers. All contributions are welcome! Please feel free to:
+
+- Report a bug
+- Discuss the current state and ideas for improvements
+- Submit a fix
+- Propose new features
+
+### How?
+
+1. Fork the repo and create your branch from `develop`.
+2. Add your code.
+3. Update the documentation.
+4. Make sure your code lints and the app builds.
+5. Open pull request to `develop` branch.
+
+Any contributions you make will be under the MIT Software License. In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Code of Conduct can be found [here](https://gist.github.com/thedevdavid/08e306cee9dc1b6b7f3c209827277a82).
 
 ## Inspiration & Mentions
 

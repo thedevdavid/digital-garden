@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added contributors to docs
 - Redesigned work availability badge
 - Fixed table of contents crash
+- Updated documentation with new features
 
 ## [0.4.1] - 2023-07-03
 
