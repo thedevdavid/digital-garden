@@ -153,6 +153,11 @@ Create a PR and add your blog to this list if you're using the template!
 - [x] about section on homepage
 - [x] search & command bar
 - [x] Analytics: Vercel, Umami
+- [x] Post series
+- [x] Not found page
+- [ ] Docs rework
+- [ ] hero title and subtitle text HTML support(?)
+- [ ] Social sharing buttons
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] 404, error, and loading pages
@@ -160,7 +165,6 @@ Create a PR and add your blog to this list if you're using the template!
 - [ ] Code highlight improvements (copy code, theme)
 - [ ] `manifest.json`
 - [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
-- [ ] Post series
 - [ ] Hidden content (behind email subscription)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
@@ -180,7 +184,6 @@ Create a PR and add your blog to this list if you're using the template!
 - [ ] code playground instead of code highlighting (?)
 - [ ] Categories and/or tags (?)
 - [ ] Commenting system (?)
-- [ ] Social sharing buttons (?)
 - [ ] keyboard-based navigation with hotkeys (?)
 - [ ] multiple layouts (sidebar, full-width, etc.) (?)
 - [ ] multilang support (?)
