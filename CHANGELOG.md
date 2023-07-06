@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-07-06
+
+### Added
+
+- `aria-label` to `Skip to content` link
+- not found page
+- post series type
+
+### Changed
+
+- Added contributors to docs
+- Redesigned work availability badge
+- Fixed table of contents crash
+- Updated documentation with new features
+
 ## [0.4.1] - 2023-07-03
 
 ### Changed

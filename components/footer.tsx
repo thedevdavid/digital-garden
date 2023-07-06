@@ -5,10 +5,9 @@ import Link from "next/link";
 import { Github, Instagram, Linkedin, Mail, Twitter, Youtube } from "lucide-react";
 
 import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/copy-button";
 import { Signature } from "@/components/signature";
-
-import { Button } from "./ui/button";
 
 const Footer = () => {
   return (

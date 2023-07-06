@@ -3,6 +3,7 @@ import { defineDocumentType } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
 
 import { calculateReadingTime } from "../utils";
+import { Series } from "./series";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -26,6 +27,10 @@ export const Post = defineDocumentType(() => ({
     tags: {
       type: "list",
       of: { type: "string" },
+    },
+    series: {
+      type: "nested",
+      of: Series,
     },
     status: {
       type: "enum",

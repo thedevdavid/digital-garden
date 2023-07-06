@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Pencil } from "lucide-react";
 
+import { defaultAuthor } from "@/lib/metadata";
 import { projects } from "@/lib/projects-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 type CardProps = React.ComponentProps<typeof Card>;
@@ -22,9 +23,9 @@ export function Sidebar({ className, ...props }: CardProps) {
         <CardContent className="grid gap-4">
           <div className="flex items-center rounded-md pl-2 hover:bg-background/40 hover:backdrop-blur-lg">
             <MapPin />
-            <p className="ml-2 mr-auto text-sm font-medium leading-none">Los Angeles</p>
+            <p className="ml-2 mr-auto text-sm font-medium leading-none">{defaultAuthor.location.city}</p>
             <Image
-              src="/losangeles.jpg"
+              src={defaultAuthor.location.media}
               alt="Los Angeles"
               width={56}
               height={56}

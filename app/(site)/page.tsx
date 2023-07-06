@@ -28,7 +28,9 @@ export default async function Home() {
   const aboutPage = await getAboutPage();
   const posts = allPosts
     .filter((post) => post.status === "published")
-    .sort((a, b) => compareDesc(new Date(a.publishedDate), new Date(b.publishedDate)));
+    .sort((a, b) =>
+      compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
+    );
 
   return (
     <div className="pb-10">
