@@ -209,8 +209,8 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 
 ### Contributors
 
-- @thedevdavid
-- @br4adam
+- [@thedevdavid](https://twitter.com/thedevdavid)
+- [@br4adam](https://github.com/br4adam)
 
 This project is from developers for developers. All contributions are welcome! Please feel free to:
 
