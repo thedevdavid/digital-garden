@@ -5,6 +5,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import siteMetadata from "@/lib/metadata";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@/components/analytics";
+import { BackTopButton } from "@/components/back-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 antialiased dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-slate-50">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <BackTopButton />
           <Toaster />
         </ThemeProvider>
       </body>
