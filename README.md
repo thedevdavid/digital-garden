@@ -171,6 +171,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Not found page
 - [x] contributing docs
 - [x] Docs refresh
+- [x] Back to top button
 - [ ] Social sharing buttons
 - [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
@@ -183,7 +184,9 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
 - [ ] `manifest.json`
-- [ ] Hidden content (behind email subscription)
+- [ ] Rich project cards
+- [ ] CV template
+- [ ] Authenticated pages and/or hidden content (behind email address)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
 - [ ] Pagination
