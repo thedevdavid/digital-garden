@@ -31,7 +31,8 @@ export default async function Home() {
     .filter((post) => post.status === "published")
     .sort((a, b) =>
       compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
-    );
+    )
+    .slice(0, 8);
 
   return (
     <div className="pb-10">
