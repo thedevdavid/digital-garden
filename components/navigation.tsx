@@ -49,12 +49,12 @@ export function Navigation() {
             </Link>
           </div>
         )}
-        <div className="flex items-center rounded-full border-b border-primary/40 bg-white/30 bg-clip-padding gap-2 px-3 py-2 shadow-md sm:container sm:px-3 backdrop-blur-md dark:bg-black/30 dark:text-white sm:justify-between sm:rounded-lg">
+        <div className="flex items-center gap-2 rounded-full border-b border-primary/40 bg-white/30 bg-clip-padding px-3 py-2 shadow-md backdrop-blur-md sm:container dark:bg-black/30 dark:text-white sm:justify-between sm:rounded-lg sm:px-3">
           <div className="flex items-center justify-start">
-            <div className="aspect-square h-auto w-10 rounded-full overflow-hidden border border-black group">
+            <div className="group aspect-square h-auto w-10 overflow-hidden rounded-full border border-black">
               <Link href="/" aria-label="Go to Home">
                 <Image
-                  className="group-hover:scale-110 duration-300"
+                  className="duration-300 group-hover:scale-110"
                   width={40}
                   height={40}
                   src="/avatar.png"
@@ -76,7 +76,7 @@ export function Navigation() {
               <MobileNav />
             </nav>
           </div>
-          <div className="order-2 flex gap-2 w-full items-center sm:order-3 sm:w-fit">
+          <div className="order-2 flex w-full items-center gap-2 sm:order-3 sm:w-fit">
             <CommandDialogComponent />
             <ModeToggle />
           </div>

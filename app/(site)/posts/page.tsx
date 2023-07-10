@@ -1,10 +1,8 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { allPosts } from "@/.contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
-import { CalendarDays, Timer } from "lucide-react";
+import { compareDesc } from "date-fns";
+
 import { defaultAuthor } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
 import PostPreview from "@/components/post-preview";
 
 export async function generateMetadata(): Promise<Metadata> {
