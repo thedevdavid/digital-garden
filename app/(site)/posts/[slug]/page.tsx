@@ -1,17 +1,19 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PostSeries, PostWithSeries, SeriesItem } from "@/types";
-import { allPosts, Post } from "contentlayer/generated";
+import { PostSeries, SeriesItem } from "@/types";
+import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Mdx } from "@/components/mdx-components";
 import { PostSeriesBox } from "@/components/post-series-box";
+import { SocialShare } from "@/components/social-share";
 import { TableOfContents } from "@/components/table-of-contents";
 
 interface PostProps {
@@ -156,15 +158,21 @@ export default async function PostPage({ params }: PostProps) {
           )}
           <Mdx code={post.body.code} />
           <hr className="my-4" />
-          {post.tags && (
-            <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
-              {post.tags.map((tag: any) => (
-                <li className="inline-block p-0" key={tag.trim()}>
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          )}
+          <div className="flex flex-row items-center justify-between">
+            {post.tags && (
+              <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
+                {post.tags.map((tag: any) => (
+                  <li className="inline-block p-0" key={tag.trim()}>
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <SocialShare
+              text={`${post.title} via ${defaultAuthor.handle}`}
+              url={`${siteMetadata.metadataBase}${post._raw.flattenedPath}`}
+            />
+          </div>
         </article>
         <aside className="hidden lg:block">
           <Card className={cn("sticky top-28 mb-4")}>
