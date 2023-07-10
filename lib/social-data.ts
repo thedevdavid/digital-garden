@@ -1,7 +1,36 @@
-export const socialLinks = [
+import { SocialProfile } from "@/types";
+
+export const socialProfiles: SocialProfile[] = [
   {
-    title: "Download my free learning path for software devs",
-    description: `I made this in collaboration with @dragonsandcodes`,
-    href: "https://dragons-and-codes.notion.site/100-days-of-becoming-a-full-stack-developer-challenge-dragonsandcodeschallenge-0dfc9f2e19784a498e0bbd05fa199f9c?ref=thedevdavid",
+    name: "github",
+    link: "https://github.com/thedevdavid",
+  },
+  {
+    name: "instagram",
+    link: "https://instagram.com/thedevdavid",
+  },
+  {
+    name: "linkedin",
+    link: "https://linkedin.com/in/thedevdavid",
+  },
+  {
+    name: "mastodon",
+    link: "https://mastodon.social/@thedevdavid",
+  },
+  {
+    name: "threads",
+    link: "https://threads.net/@thedevdavid",
+  },
+  {
+    name: "tiktok",
+    link: "https://tiktok.com/@thedevdavid",
+  },
+  {
+    name: "twitter",
+    link: "https://twitter.com/thedevdavid",
+  },
+  {
+    name: "youtube",
+    link: "https://youtube.com/@thedevdavid",
   },
 ];

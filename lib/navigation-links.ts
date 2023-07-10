@@ -15,7 +15,7 @@ const content: ContentNavItem[] = [
   },
   {
     title: "Videos",
-    href: defaultAuthor.social.youtube,
+    href: defaultAuthor.socialProfiles.find((platform) => platform.name === "youtube")?.link as string,
     description: "My YouTube channel where I talk about web development.",
   },
   {

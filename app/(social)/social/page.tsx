@@ -1,15 +1,12 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import { Github, Instagram, Linkedin, Mail, Twitter, Youtube } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { projects } from "@/lib/projects-data";
-import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/copy-button";
 import CTA from "@/components/cta";
 import { Signature } from "@/components/signature";
+import { SocialButton } from "@/components/social-button";
 import { SpotlightCard } from "@/components/spotlight-card";
 
 export default async function SocialPage() {
@@ -32,33 +29,11 @@ export default async function SocialPage() {
           </div>
           <h2 className="mb-2 mt-6 font-heading text-2xl font-bold">My socials</h2>
           <div className="mb-4 flex w-full max-w-2xl flex-col space-y-4">
-            <Button variant="default" asChild>
-              <Link href={defaultAuthor.social.twitter} target="_blank">
-                <Twitter /> My Twitter profile
-              </Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link href={defaultAuthor.social.youtube} target="_blank">
-                <Youtube /> My Youtube channel
-              </Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link href={defaultAuthor.social.github} target="_blank">
-                <Github /> My Github profile
-              </Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link href={defaultAuthor.social.instagram} target="_blank">
-                <Instagram /> My Instagram profile
-              </Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link href={defaultAuthor.social.linkedin} target="_blank">
-                <Linkedin /> My LinkedIn profile
-              </Link>
-            </Button>
+            {defaultAuthor.socialProfiles.map((platform) => (
+              <SocialButton key={platform.name} variant="outline" platform={platform} />
+            ))}
             <CopyButton variant="default" copyText={defaultAuthor.email}>
-              <Mail /> Email address
+              <Mail className="mr-2" /> Email address
             </CopyButton>
           </div>
           <Signature />
