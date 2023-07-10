@@ -100,7 +100,9 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
           <CommandGroup heading="Social">
             <CommandItem
               onSelect={() => {
-                runCommand(() => navigate(defaultAuthor.social.twitter));
+                runCommand(() =>
+                  navigate(defaultAuthor.socialProfiles.find((platform) => platform.name === "twitter")?.link as string)
+                );
               }}
             >
               <Twitter className="mr-2 h-4 w-4" />
@@ -108,7 +110,9 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
             </CommandItem>
             <CommandItem
               onSelect={() => {
-                runCommand(() => navigate(defaultAuthor.social.github));
+                runCommand(() =>
+                  navigate(defaultAuthor.socialProfiles.find((platform) => platform.name === "github")?.link as string)
+                );
               }}
             >
               <Github className="mr-2 h-4 w-4" />
