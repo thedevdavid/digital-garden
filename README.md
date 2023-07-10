@@ -172,11 +172,14 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] contributing docs
 - [x] Docs refresh
 - [x] Back to top button
-- [ ] Social sharing buttons
+- [x] Social icons component
+- [x] Social sharing buttons
+- [ ] Tags, categories
 - [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
-- [ ] Tags, categories
 - [ ] Post series page
+- [ ] prev/next post links
+- [ ] related posts
 - [ ] Layouts/templates system
 - [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)

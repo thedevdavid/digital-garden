@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Back to top button
+- SocialIcon component
+- Share post component
+
+### Changed
+
+- Changed social icons to use [simple-icons](https://simpleicons.org)
 
 ## [0.5.0] - 2023-07-06
 
