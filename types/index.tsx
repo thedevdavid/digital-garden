@@ -33,7 +33,6 @@ export type SiteMetaData = {
   };
   description: string;
   siteRepo: string;
-  metadataBase: URL;
   newsletterUrl: string;
   analyticsProvider: AnalyticsProvider;
 };

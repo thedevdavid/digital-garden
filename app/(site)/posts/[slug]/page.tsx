@@ -6,7 +6,7 @@ import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
-import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { BASE_URL, defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -170,7 +170,7 @@ export default async function PostPage({ params }: PostProps) {
             )}
             <SocialShare
               text={`${post.title} via ${defaultAuthor.handle}`}
-              url={`${siteMetadata.metadataBase}${post._raw.flattenedPath}`}
+              url={`${BASE_URL}/${post._raw.flattenedPath}`}
             />
           </div>
         </article>
