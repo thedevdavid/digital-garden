@@ -67,3 +67,9 @@ export type AuthorType = {
     media: string;
   };
 };
+
+export type TagCount = {
+  slug: string;
+  title: string;
+  count: number;
+};

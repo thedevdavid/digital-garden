@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "@/.contentlayer/generated";
+import { Post, Tag } from "@/.contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { CalendarDays, Timer } from "lucide-react";
 
@@ -33,13 +33,13 @@ const PostPreview = ({ post }: PostPreviewProps) => {
         </div>
         {post?.tags && (
           <ul className="my-4 flex flex-wrap gap-2 p-0">
-            {post.tags.map((tag: any) => (
-              <li key={tag.trim()}>
+            {post.tags.map((tag: Tag) => (
+              <li key={tag.slug}>
                 <Badge
                   variant="outline"
                   className="inline-block rounded-full border border-muted-foreground/50 bg-muted-foreground/10 px-2 py-0.5 text-xs text-muted-foreground"
                 >
-                  {tag}
+                  {tag.title}
                 </Badge>
               </li>
             ))}

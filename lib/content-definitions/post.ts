@@ -4,6 +4,7 @@ import GithubSlugger from "github-slugger";
 
 import { calculateReadingTime } from "../utils";
 import { Series } from "./series";
+import { Tag } from "./tag";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -26,7 +27,7 @@ export const Post = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: { type: "string" },
+      of: Tag,
     },
     series: {
       type: "nested",
