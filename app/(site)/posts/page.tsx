@@ -18,6 +18,7 @@ export default function Blog() {
     .sort((a, b) =>
       compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
     );
+
   return (
     <div className="container mb-4">
       <div className="prose mx-auto max-w-5xl dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:leading-tight hover:prose-a:text-accent-foreground prose-a:prose-headings:no-underline">

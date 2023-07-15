@@ -43,7 +43,6 @@ const CTA = ({ title, description, buttonText }: CTAProps) => {
         </ToastAction>
       ),
     });
-    console.log(values);
   }
   return (
     <section className="relative isolate my-24 overflow-hidden bg-primary py-6 text-primary-foreground">

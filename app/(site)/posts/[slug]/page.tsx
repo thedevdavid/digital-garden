@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PostSeries, SeriesItem } from "@/types";
-import { allPosts, Tag } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
@@ -161,10 +161,10 @@ export default async function PostPage({ params }: PostProps) {
           <div className="flex flex-row items-center justify-between">
             {post.tags && (
               <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
-                {post.tags.map((tag: Tag) => (
-                  <li className="inline-block p-0" key={tag.slug}>
-                    <Link href={`/tags/${tag.slug}`} className="inline-block transition hover:text-muted-foreground/70">
-                      {tag.title}
+                {post.tags.map((tag: string) => (
+                  <li className="inline-block p-0" key={tag}>
+                    <Link href={`/tags/${tag}`} className="inline-block transition hover:text-muted-foreground/70">
+                      {tag}
                     </Link>
                   </li>
                 ))}

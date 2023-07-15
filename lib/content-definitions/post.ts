@@ -4,7 +4,23 @@ import GithubSlugger from "github-slugger";
 
 import { calculateReadingTime } from "../utils";
 import { Series } from "./series";
-import { Tag } from "./tag";
+
+const tagOptions = [
+  "starter",
+  "development",
+  "docs",
+  "freelancing",
+  "opinion",
+  "jamstack",
+  "frontend",
+  "development",
+  "javascript",
+  "typescript",
+  "react",
+  "nextjs",
+  "gatsby",
+  "tailwindcss",
+];
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -27,7 +43,8 @@ export const Post = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: Tag,
+      of: { type: "string", options: tagOptions },
+      required: false,
     },
     series: {
       type: "nested",
@@ -40,6 +57,19 @@ export const Post = defineDocumentType(() => ({
     },
   },
   computedFields: {
+    tagSlugs: {
+      type: "list",
+      resolve: async (doc) => {
+        if (doc.tags) {
+          // make a new array of tags to use them in computedFields https://github.com/contentlayerdev/contentlayer/issues/149
+          const tags = [...(doc?.tags ?? ([] as string[]))];
+          const slugger = new GithubSlugger();
+
+          return tags.map((tag) => slugger.slug(tag));
+        }
+        return null;
+      },
+    },
     readTimeMinutes: {
       type: "number",
       resolve: (doc) => calculateReadingTime(doc.body.raw),

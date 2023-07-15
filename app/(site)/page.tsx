@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { allPages, allPosts } from "@/.contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
+import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
@@ -16,13 +17,13 @@ import { Mdx } from "@/components/mdx-components";
 import PostPreview from "@/components/post-preview";
 
 async function getAboutPage() {
-  const page = allPages.find((page) => page.slug === "about");
+  const aboutPage = allPages.find((page) => page.slug === "about");
 
-  if (!page) {
+  if (!aboutPage) {
     null;
   }
 
-  return page;
+  return aboutPage;
 }
 
 export default async function Home() {

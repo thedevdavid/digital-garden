@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { allPosts, Tag } from "@/.contentlayer/generated";
-import { TagCount } from "@/types";
+import { notFound } from "next/navigation";
+import { allPosts } from "@/.contentlayer/generated";
 
 import siteMetadata from "@/lib/metadata";
-import { normalizeAndCountTags } from "@/lib/utils";
+import { getTagsWithCount } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -14,31 +15,38 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function TagsPage() {
-  const tags: (Tag[] | undefined)[] = allPosts.filter((post) => post.tags).map((post) => post.tags);
+  const posts = allPosts.filter((post) => post.status === "published");
 
-  if (!tags || tags.length === 0) {
-    return null;
+  const tags = getTagsWithCount(posts);
+
+  if (!tags || Object.keys(tags).length === 0) {
+    notFound();
   }
-
-  const normalizedTags: TagCount[] = normalizeAndCountTags(tags);
 
   return (
     <div className="container mb-4">
       <div className="prose mx-auto max-w-5xl dark:prose-invert prose-headings:font-heading prose-headings:font-bold prose-headings:leading-tight hover:prose-a:text-accent-foreground prose-a:prose-headings:no-underline">
-        <h1 className="mt-0">All posts in TAG</h1>
+        <h1 className="mt-0">All tags</h1>
         <hr className="my-4" />
         <div className="grid grid-flow-row gap-2">
-          <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
-            {normalizedTags.map((tag) => (
-              <li className="inline-block p-0" key={tag.slug}>
-                <Link href={`/tags/${tag.slug}`} className="inline-block transition hover:text-muted-foreground/70">
-                  {tag.title}
-                </Link>{" "}
-                &middot; {tag.count}
-              </li>
-            ))}
+          <ul className="flex list-none flex-wrap gap-2 p-0">
+            {Object.keys(tags).map((tag) => {
+              return (
+                <li className="list-none" key={tag}>
+                  <Link href={`/tags/${tag}`} className="group">
+                    <Badge
+                      variant="outline"
+                      className="inline-block rounded-full border border-muted-foreground/50 bg-muted-foreground/10 px-3 py-1 text-base font-medium text-muted-foreground transition hover:bg-muted-foreground hover:text-foreground"
+                    >
+                      <span>
+                        {tag} &middot; ({tags[tag]})
+                      </span>
+                    </Badge>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
-          <ul></ul>
         </div>
       </div>
     </div>

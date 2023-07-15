@@ -181,6 +181,8 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [ ] prev/next post links
 - [ ] related posts
 - [ ] Layouts/templates system
+- [ ] Notion data source
+- [ ] Sanity data source
 - [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] error, and loading pages
