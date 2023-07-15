@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Share post component
 - Lint staged files
 - Tag generation and routing
+- Newsletter feature
+- MailerLite integration
+- ConvertKit integration
+- Substack integration
 
 ### Changed
 

@@ -175,11 +175,13 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Social icons component
 - [x] Social sharing buttons
 - [x] Tags
-- [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
+- [x] newsletter integration (form, api route, keys, thank you/welcome page, MailerLite & ConvertKit providers)
+- [ ] Other newsletter providers (Buttondown, Mailchimp, etc)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
 - [ ] Post series page
 - [ ] prev/next post links
 - [ ] related posts
+- [ ] Newsletter previous issues page
 - [ ] Layouts/templates system
 - [ ] Notion data source
 - [ ] Sanity data source
