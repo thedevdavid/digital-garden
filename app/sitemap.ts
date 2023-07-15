@@ -27,10 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
-      url: `${BASE_URL}/about`,
-      lastModified: now,
-    },
-    {
       url: `${BASE_URL}/projects`,
       lastModified: now,
     },
