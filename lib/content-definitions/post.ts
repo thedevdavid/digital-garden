@@ -5,7 +5,7 @@ import GithubSlugger from "github-slugger";
 import { calculateReadingTime } from "../utils";
 import { Series } from "./series";
 
-const tagOptions = [
+export const tagOptions = [
   "starter",
   "development",
   "docs",
