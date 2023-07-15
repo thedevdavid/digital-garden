@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SocialIcon component
 - Share post component
 - Lint staged files
+- Tag generation and routing
 
 ### Changed
 

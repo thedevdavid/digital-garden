@@ -161,9 +161,11 @@ export default async function PostPage({ params }: PostProps) {
           <div className="flex flex-row items-center justify-between">
             {post.tags && (
               <ul className="m-0 list-none space-x-2 p-0 text-sm text-muted-foreground">
-                {post.tags.map((tag: any) => (
-                  <li className="inline-block p-0" key={tag.trim()}>
-                    {tag}
+                {post.tags.map((tag: string) => (
+                  <li className="inline-block p-0" key={tag}>
+                    <Link href={`/tags/${tag}`} className="inline-block transition hover:text-muted-foreground/70">
+                      {tag}
+                    </Link>
                   </li>
                 ))}
               </ul>

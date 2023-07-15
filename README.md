@@ -174,13 +174,15 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Back to top button
 - [x] Social icons component
 - [x] Social sharing buttons
-- [ ] Tags, categories
+- [x] Tags
 - [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
 - [ ] Post series page
 - [ ] prev/next post links
 - [ ] related posts
 - [ ] Layouts/templates system
+- [ ] Notion data source
+- [ ] Sanity data source
 - [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] error, and loading pages
