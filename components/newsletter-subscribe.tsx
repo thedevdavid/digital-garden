@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";

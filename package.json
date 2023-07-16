@@ -65,7 +65,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "eslint-config-prettier": "8.8.0",
-    "husky": "^8.0.3",
+    "husky": "8.0.0",
     "lint-staged": "13.2.3",
     "postcss": "8.4.26",
     "prettier": "3.0.0",

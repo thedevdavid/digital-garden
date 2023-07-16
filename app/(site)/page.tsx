@@ -7,13 +7,13 @@ import { ArrowRight } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
-import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
 import { Mdx } from "@/components/mdx-components";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import PostPreview from "@/components/post-preview";
 
 async function getAboutPage() {
