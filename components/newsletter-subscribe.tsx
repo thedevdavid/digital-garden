@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -11,7 +12,6 @@ import siteMetadata from "@/lib/metadata";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 
 interface CTAProps {
@@ -24,7 +24,7 @@ const formSchema = z.object({
   email: z.string().email(),
 });
 
-const CTA = ({ title, description, buttonText }: CTAProps) => {
+const NewsletterSubscribe = ({ title, description, buttonText }: CTAProps) => {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,18 +32,31 @@ const CTA = ({ title, description, buttonText }: CTAProps) => {
       email: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // TODO: Newsletter subscriptions
-    toast({
-      title: "In progress...",
-      description: "I'm still working on this feature.",
-      action: (
-        <ToastAction altText="Go to Newsletter page" asChild>
-          <Link href={siteMetadata.newsletterUrl}>Go to Newsletter page</Link>
-        </ToastAction>
-      ),
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const response = await fetch("/newsletter", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: values.email,
+      }),
     });
-  }
+
+    if (!response?.ok) {
+      return toast({
+        title: "Something went wrong.",
+        description: "The subscription did not happen. Please try again.",
+        variant: "destructive",
+      });
+    }
+
+    return toast({
+      title: "Success.",
+      description: "You'll get the emails now.",
+    });
+  };
+
   return (
     <section className="relative isolate my-24 overflow-hidden bg-primary py-6 text-primary-foreground">
       <div className="p-8 md:p-12">
@@ -68,7 +81,7 @@ const CTA = ({ title, description, buttonText }: CTAProps) => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" variant="secondary" className="">
+              <Button type="submit" variant="secondary">
                 <Mail className="mr-2 h-4 w-4" /> {buttonText}
               </Button>
             </form>
@@ -107,4 +120,4 @@ const CTA = ({ title, description, buttonText }: CTAProps) => {
   );
 };
 
-export default CTA;
+export default NewsletterSubscribe;

@@ -38,7 +38,7 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed -bottom-32 z-20 mx-auto mb-4 w-full px-4 animate-out delay-500 sm:static sm:z-auto sm:mb-0 sm:mt-4 sm:h-16 sm:max-w-6xl sm:transition-none sm:delay-0 lg:px-0",
+          "fixed -bottom-32 z-20 mx-auto mb-4 w-full px-4 delay-500 animate-out sm:static sm:z-auto sm:mb-0 sm:mt-4 sm:h-16 sm:max-w-6xl sm:transition-none sm:delay-0 lg:px-0",
           visible && "bottom-0 left-0 animate-in"
         )}
       >

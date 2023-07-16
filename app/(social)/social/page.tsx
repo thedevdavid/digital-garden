@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 import { defaultAuthor } from "@/lib/metadata";
 import { projects } from "@/lib/projects-data";
 import { CopyButton } from "@/components/copy-button";
-import CTA from "@/components/cta";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { Signature } from "@/components/signature";
 import { SocialButton } from "@/components/social-button";
 import { SpotlightCard } from "@/components/spotlight-card";
@@ -39,7 +39,7 @@ export default async function SocialPage() {
           <Signature />
         </div>
       </div>
-      <CTA
+      <NewsletterSubscribe
         title="I also write deep dives in email"
         description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."
