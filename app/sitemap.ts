@@ -1,15 +1,20 @@
 import { MetadataRoute } from "next";
 import { allPages, allPosts } from "@/.contentlayer/generated";
 
+import { tagOptions } from "@/lib/content-definitions/post";
 import { BASE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = allPosts
-    .filter((post) => post.status === "published")
-    .map((post) => ({
-      url: `${BASE_URL}/posts/${post.slug}`,
-      lastModified: post.lastUpdatedDate,
-    }));
+  const now = new Date();
+  const loadedPosts = allPosts.filter((post) => post.status === "published");
+  const tags = tagOptions.map((tag) => ({
+    url: `${BASE_URL}/tags/${tag}`,
+    lastModified: now,
+  }));
+  const posts = loadedPosts.map((post) => ({
+    url: `${BASE_URL}/posts/${post.slug}`,
+    lastModified: post.lastUpdatedDate,
+  }));
   const pages = allPages
     .filter((page) => page.status === "published")
     .map((page) => ({
@@ -19,29 +24,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE_URL,
-      lastModified: new Date(),
-    },
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: new Date(),
+      lastModified: now,
     },
     {
       url: `${BASE_URL}/projects`,
-      lastModified: new Date(),
+      lastModified: now,
     },
     {
       url: `${BASE_URL}/uses`,
-      lastModified: new Date(),
+      lastModified: now,
     },
     {
       url: `${BASE_URL}/social`,
-      lastModified: new Date(),
+      lastModified: now,
     },
     ...pages,
     {
       url: `${BASE_URL}/posts`,
-      lastModified: new Date(),
+      lastModified: now,
     },
     ...posts,
+    {
+      url: `${BASE_URL}/tags`,
+      lastModified: now,
+    },
+    ...tags,
   ];
 }

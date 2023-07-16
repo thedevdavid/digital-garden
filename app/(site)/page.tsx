@@ -7,13 +7,13 @@ import { ArrowRight } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
-import CTA from "@/components/cta";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
 import { Mdx } from "@/components/mdx-components";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import PostPreview from "@/components/post-preview";
 
 async function getAboutPage() {
@@ -61,7 +61,7 @@ export default async function Home() {
           </aside>
         </div>
       </div>
-      <CTA
+      <NewsletterSubscribe
         title="I also write deep dives in email"
         description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."
