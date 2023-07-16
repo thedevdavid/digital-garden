@@ -33,7 +33,6 @@ export type SiteMetaData = {
   };
   description: string;
   siteRepo: string;
-  metadataBase: URL;
   newsletterUrl: string;
   analyticsProvider: AnalyticsProvider;
 };
@@ -49,17 +48,15 @@ export type PostSeries = Series & { posts: SeriesItem[] };
 
 export type PostWithSeries = Omit<Post, "series"> & { series: PostSeries };
 
+export type SocialProfile = {
+  name: string;
+  link: string;
+};
+
 export type AuthorType = {
   name: string;
   handle: string;
-  social: {
-    github: string;
-    instagram: string;
-    linkedin: string;
-    tiktok: string;
-    twitter: string;
-    youtube: string;
-  };
+  socialProfiles: SocialProfile[];
   email: string;
   website: string;
   jobTitle: string;

@@ -3,9 +3,9 @@ title: "Choosing Providers"
 publishedDate: "2023-07-05"
 lastUpdatedDate: "2023-07-05"
 tags:
-  - "starter"
-  - "development"
-  - "docs"
+  - starter
+  - docs
+  - development
 description: "How to choose and set up Analytics, newsletter, and other providers for your blog."
 status: published
 series:
@@ -13,26 +13,35 @@ series:
   title: "Using this template"
 ---
 
-## Analytics
+### Analytics
 
-### Vercel
+#### Vercel
 
 To configure, you need to enable it on [Vercel project dashboard](https://vercel.com/dashboard) by selecting your Project and then click the Analytics tab and click Enable from the dialog.
 
-### Umami
+#### Umami
 
 Umami is a simple, easy to use, web analytics solution with self-hosting option! You can read more about it on [Umami website](https://umami.is/). _(Hint: On [Railway](https://railway.app), you can self-host it low cost or even free)_.
 
 Configure:
 Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
 
-### Others
+#### Other analytics providers
 
 Supporting other analytics providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ### Newsletter subscription
 
-_WIP_ as I'm still deciding which email tools to support. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+#### MailerLite
+
+MailerLite is a simple email marketing tool for all types of businesses. You can read more about it on [MailerLite website](https://www.mailerlite.com/).
+
+Configure:
+Set `EMAIL_API_BASE`, `EMAIL_API_KEY`, and `EMAIL_GROUP_ID` environment variables on your `.env.local` file and on Vercel dashboard.
+
+#### Other newsletter providers
+
+Supporting other newsletter providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ---
 

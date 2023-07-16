@@ -1,3 +1,4 @@
+import { Post } from "@/.contentlayer/generated";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -14,3 +15,15 @@ export const calculateReadingTime = (text: string): number => {
 
   return readTime;
 };
+
+export const getTagsWithCount = (posts: Post[]) =>
+  posts.reduce((acc: any, post: Post) => {
+    post.tags?.forEach((tag: any) => {
+      if (acc[tag]) {
+        acc[tag] += 1;
+      } else {
+        acc[tag] = 1;
+      }
+    });
+    return acc;
+  }, {});

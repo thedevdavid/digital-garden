@@ -4,7 +4,7 @@ import { Code } from "bright";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { fileIcons } from "@/lib/bright-config";
-import CTA from "@/components/cta";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 function YouTubeVideo({ id }: { id: string }) {
   return (
@@ -44,7 +44,7 @@ Code.lineNumbers = true;
 
 const components = {
   Image,
-  CTA,
+  NewsletterSubscribe,
   YouTubeVideo,
   pre: Code,
   // a: CustomLink,

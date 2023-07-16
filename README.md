@@ -24,7 +24,12 @@ If you love this template and/or use it, please give it a star on GitHub. This w
   - [Colors](#colors)
   - [Metadata](#metadata)
   - [Analytics](#analytics)
+    - [Vercel](#vercel)
+    - [Umami](#umami)
+    - [Other analytics providers](#other-analytics-providers)
   - [Newsletter subscription](#newsletter-subscription)
+    - [MailerLite](#mailerlite)
+    - [Other newsletter providers](#other-newsletter-providers)
   - [Hero section](#hero-section)
   - [Other tips & tricks](#other-tips--tricks)
     - [Image optimization](#image-optimization)
@@ -116,13 +121,22 @@ Umami is a simple, easy to use, web analytics solution with self-hosting option!
 Configure:
 Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
 
-#### Others
+#### Other analytics providers
 
 Supporting other analytics providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ### Newsletter subscription
 
-_WIP_ as I'm still deciding which email tools to support. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
+#### MailerLite
+
+MailerLite is a simple email marketing tool for all types of businesses. You can read more about it on [MailerLite website](https://www.mailerlite.com/).
+
+Configure:
+Set `EMAIL_API_BASE`, `EMAIL_API_KEY`, and `EMAIL_GROUP_ID` environment variables on your `.env.local` file and on Vercel dashboard.
+
+#### Other newsletter providers
+
+Supporting other newsletter providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
 
 ### Hero section
 
@@ -171,19 +185,30 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Not found page
 - [x] contributing docs
 - [x] Docs refresh
-- [ ] Social sharing buttons
-- [ ] newsletter integration (form, api route, keys, welcome page, previous issues)
+- [x] Back to top button
+- [x] Social icons component
+- [x] Social sharing buttons
+- [x] Tags
+- [x] newsletter integration (form, api route, keys, thank you/welcome page, MailerLite provider)
+- [ ] Other newsletter providers (Convertkit, Substack, Buttondown, Mailchimp, etc)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
-- [ ] Tags, categories
+- [ ] CLI and/or recipes
 - [ ] Post series page
+- [ ] prev/next post links
+- [ ] related posts
+- [ ] Newsletter previous issues page
 - [ ] Layouts/templates system
+- [ ] Notion data source
+- [ ] Sanity data source
 - [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
 - [ ] error, and loading pages
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
 - [ ] `manifest.json`
-- [ ] Hidden content (behind email subscription)
+- [ ] Rich project cards
+- [ ] CV template
+- [ ] Authenticated pages and/or hidden content (behind email address)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
 - [ ] Pagination

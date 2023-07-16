@@ -1,27 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { allPages, allPosts } from "@/.contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
+import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
-import CTA from "@/components/cta";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
 import { Mdx } from "@/components/mdx-components";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
+import PostPreview from "@/components/post-preview";
 
 async function getAboutPage() {
-  const page = allPages.find((page) => page.slug === "about");
+  const aboutPage = allPages.find((page) => page.slug === "about");
 
-  if (!page) {
+  if (!aboutPage) {
     null;
   }
 
-  return page;
+  return aboutPage;
 }
 
 export default async function Home() {
@@ -30,7 +32,8 @@ export default async function Home() {
     .filter((post) => post.status === "published")
     .sort((a, b) =>
       compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
-    );
+    )
+    .slice(0, 8);
 
   return (
     <div className="pb-10">
@@ -41,25 +44,9 @@ export default async function Home() {
       <div className="container mt-12 max-w-6xl">
         <div className="grid grid-cols-1 place-items-start justify-between gap-12 lg:grid-cols-3">
           <div className="col-span-1 lg:col-span-2">
-            <div className="prose grid grid-flow-row gap-3">
+            <div className="grid grid-flow-row gap-2">
               {posts.map((post) => (
-                <article key={post._id} className="w-full">
-                  <Link
-                    href={`posts/${post.slug}`}
-                    className={cn(
-                      "select-rounded-md block w-full rounded-md px-3 py-6 leading-none no-underline outline-none transition hover:bg-foreground/20 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    )}
-                  >
-                    <h2 className="m-0 text-2xl font-bold leading-none text-foreground">{post.title}</h2>
-                    <div className="mb-4 mt-1 text-sm leading-snug text-muted-foreground">
-                      <time dateTime={post.publishedDate}>{format(parseISO(post.publishedDate), "LLLL d, yyyy")}</time>
-                      <span>{` // ${post.readTimeMinutes} mins read`}</span>
-                    </div>
-                    {post.description && (
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{post.description}</p>
-                    )}
-                  </Link>
-                </article>
+                <PostPreview key={post._id} post={post} />
               ))}
             </div>
             <Link
@@ -74,7 +61,7 @@ export default async function Home() {
           </aside>
         </div>
       </div>
-      <CTA
+      <NewsletterSubscribe
         title="I also write deep dives in email"
         description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."

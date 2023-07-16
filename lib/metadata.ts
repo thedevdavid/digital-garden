@@ -1,18 +1,14 @@
 import { AuthorType, SiteMetaData } from "@/types";
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+import { socialProfiles } from "./social-data";
+
+export const BASE_URL =
+  process.env.VERCEL_URL || process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
 
 export const defaultAuthor: AuthorType = {
   name: "Amy Shields",
   handle: "@amyshieldsfake",
-  social: {
-    github: "https://github.com/thedevdavid",
-    instagram: "https://instagram.com/thedevdavid",
-    linkedin: "https://linkedin.com/in/thedevdavid",
-    tiktok: "https://tiktok.com/@thedevdavid",
-    twitter: "https://twitter.com/thedevdavid",
-    youtube: "https://youtube.com/@thedevdavid",
-  },
+  socialProfiles,
   email: "definitelyfake@nevermind.com",
   website: "https://nextjs.org",
   jobTitle: "Frontend Engineer & UI Designer",
@@ -34,7 +30,6 @@ const siteMetadata: SiteMetaData = {
   },
   description: defaultDescription,
   siteRepo: "https://github.com/thedevdavid/digital-garden",
-  metadataBase: new URL(BASE_URL),
   newsletterUrl: "https://developreneur.davidlevai.com",
   analyticsProvider: "umami",
 };
