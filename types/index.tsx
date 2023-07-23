@@ -33,8 +33,9 @@ export type SiteMetaData = {
   };
   description: string;
   siteRepo: string;
-  newsletterUrl: string;
-  analyticsProvider: AnalyticsProvider;
+  newsletterUrl?: string;
+  analyticsProvider?: AnalyticsProvider;
+  defaultTheme: "light" | "dark" | "system";
 };
 
 export type SeriesItem = {
@@ -60,7 +61,7 @@ export type AuthorType = {
   email: string;
   website: string;
   jobTitle: string;
-  company: string;
+  company?: string;
   availableForWork: boolean;
   location: {
     city: string;

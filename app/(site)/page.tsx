@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { allPages, allPosts } from "@/.contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
 import { defaultAuthor } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";

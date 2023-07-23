@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { allPosts } from "@/.contentlayer/generated";
 import { PostSeries, SeriesItem } from "@/types";
-import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
@@ -59,6 +59,8 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: post?.author?.name || defaultAuthor.name, url: defaultAuthor.website }],
+    keywords: post.tags,
   };
 }
 

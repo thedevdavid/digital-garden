@@ -3,7 +3,7 @@
 ![Image2](/screenshots/garden2.png)
 [More screenshots here](/screenshots/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/thedevdavid/digital-garden)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthedevdavid%2Fdigital-garden%2F)
 
 An open source blogging (digital gardening) template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
 
@@ -190,18 +190,24 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Social sharing buttons
 - [x] Tags
 - [x] newsletter integration (form, api route, keys, thank you/welcome page, MailerLite provider)
+- [x] more MDX components (katex, math)
+- [x] author content definition
 - [ ] Other newsletter providers (Convertkit, Substack, Buttondown, Mailchimp, etc)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
 - [ ] CLI and/or recipes
 - [ ] Post series page
 - [ ] prev/next post links
-- [ ] related posts
+- [ ] related/similar posts
+- [ ] Donate component & page
+- [ ] RTL Support
 - [ ] Newsletter previous issues page
 - [ ] Layouts/templates system
 - [ ] Notion data source
 - [ ] Sanity data source
+- [ ] custom admin CMS(?)
 - [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
+- [ ] more MDX components (embed)
 - [ ] error, and loading pages
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
@@ -221,6 +227,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [ ] general cleanup
 - [ ] implement content security policies
 - [ ] implement a videoask-like solution for the hero section
+- [ ] lightbox for images
 - [ ] RSS feed improvements (image, description, etc.)
 - [ ] multi-author support (?)
 - [ ] Post like counter (?)

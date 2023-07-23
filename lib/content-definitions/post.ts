@@ -3,6 +3,7 @@ import { defineDocumentType } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
 
 import { calculateReadingTime } from "../utils";
+import { Author } from "./author";
 import { Series } from "./series";
 
 export const tagOptions = [
@@ -49,6 +50,10 @@ export const Post = defineDocumentType(() => ({
     series: {
       type: "nested",
       of: Series,
+    },
+    author: {
+      type: "nested",
+      of: Author,
     },
     status: {
       type: "enum",

@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   const posts = loadedPosts.map((post) => ({
     url: `${BASE_URL}/posts/${post.slug}`,
-    lastModified: post.lastUpdatedDate,
+    lastModified: post.lastUpdatedDate || post.publishedDate,
   }));
   const pages = allPages
     .filter((page) => page.status === "published")

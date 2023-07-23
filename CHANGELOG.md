@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Convertkit newsletter provider
 - Plausible analytics provider
+- Math and Katex support
+- Author content definition
+
+### Changed
+
+- Small SEO updates
+- Codebase and type fixes
 
 ## [0.6.0] - 2023-07-16
 

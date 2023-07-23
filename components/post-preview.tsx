@@ -32,7 +32,7 @@ const PostPreview = ({ post }: PostPreviewProps) => {
           </div>
         </div>
         {post?.tags && (
-          <ul className="my-4 flex flex-wrap gap-2 p-0">
+          <ul className="my-4 flex list-none flex-wrap gap-2 p-0">
             {post.tags.map((tag: string) => (
               <li key={tag}>
                 <Badge

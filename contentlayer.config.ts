@@ -1,7 +1,10 @@
+import { writeFileSync } from "fs";
 import { makeSource } from "contentlayer/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 import { Page } from "./lib/content-definitions/page";
 import { Post } from "./lib/content-definitions/post";
@@ -17,8 +20,9 @@ export default makeSource({
       options.target = "esnext";
       return options;
     },
-    remarkPlugins: [[remarkGfm]],
+    remarkPlugins: [[remarkGfm], [remarkMath]],
     rehypePlugins: [
+      [rehypeKatex],
       [rehypeSlug],
       [
         rehypeAutolinkHeadings,
@@ -30,5 +34,8 @@ export default makeSource({
         },
       ],
     ],
+  },
+  onSuccess: async (data) => {
+    // write the data to a file, so we can use it in search
   },
 });
