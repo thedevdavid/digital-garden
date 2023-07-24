@@ -151,13 +151,14 @@ You can choose between 3 different hero variants to use in `app/(site)/page.tsx`
 
 #### Image optimization
 
-Optimize images in seconds for free with ImageOptim. Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
+I recommend optimizing images fast for free with [ImageOptim](https://imageoptim.com/mac). Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
 
 Note: DO NOT overdo it. You can easily make images look bad with lossy compression algorithms.
 
 ## Examples
 
-- [https://davidlevai.com/](https://davidlevai.com/)
+- [https://davidlevai.com/](https://davidlevai.com/) - My own digital garden
+- [https://dragonsandcodes.com/](https://dragonsandcodes.com/) - Simple modifications
 
 **Create a PR and add your blog to this list if you're using the template!**
 
@@ -194,41 +195,41 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] author content definition
 - [ ] Other newsletter providers (Convertkit, Substack, Buttondown, Mailchimp, etc)
 - [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
-- [ ] CLI and/or recipes
+- [ ] SEO improvements
+- [ ] RTL Support
 - [ ] Post series page
 - [ ] prev/next post links
 - [ ] related/similar posts
 - [ ] Donate component & page
-- [ ] RTL Support
+- [ ] CLI and/or recipes
 - [ ] Newsletter previous issues page
 - [ ] Layouts/templates system
 - [ ] Notion data source
 - [ ] Sanity data source
-- [ ] custom admin CMS(?)
-- [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
-- [ ] more MDX components (embed)
-- [ ] error, and loading pages
+- [ ] lightbox for images
+- [ ] implement content security policies
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
-- [ ] `manifest.json`
 - [ ] Rich project cards
 - [ ] CV template
 - [ ] Authenticated pages and/or hidden content (behind email address)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
-- [ ] Pagination
-- [ ] SEO improvements
 - [ ] Accessibility audit
+- [ ] more MDX components (oembed)
+- [ ] error, and loading pages
 - [ ] TypeScript fixes
+- [ ] Redesign social page (link in bio)
 - [ ] Redesign uses page
 - [ ] Redesign projects page
 - [ ] general refactor
 - [ ] general cleanup
-- [ ] implement content security policies
 - [ ] implement a videoask-like solution for the hero section
-- [ ] lightbox for images
 - [ ] RSS feed improvements (image, description, etc.)
+- [ ] custom admin CMS(?)
+- [ ] hero title and subtitle text HTML support(?)
+- [ ] Pagination (?)
 - [ ] multi-author support (?)
 - [ ] Post like counter (?)
 - [ ] Visitor counter (?)
