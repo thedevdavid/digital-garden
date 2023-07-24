@@ -4,7 +4,7 @@ import { allPages, allPosts } from "@/.contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
@@ -59,12 +59,14 @@ export default async function Home() {
           </aside>
         </div>
       </div>
-      <NewsletterSubscribe
-        title="I also write deep dives in email"
-        description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
+      {siteMetadata.newsletterUrl && (
+        <NewsletterSubscribe
+          title="I also write deep dives in email"
+          description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."
-        buttonText="Send me the emails"
-      />
+          buttonText="Send me the emails"
+        />
+      )}
       {aboutPage && (
         <div className="container max-w-6xl">
           <h2 className="mb-8 font-heading text-4xl font-bold">Who&apos;s this girl again?</h2>

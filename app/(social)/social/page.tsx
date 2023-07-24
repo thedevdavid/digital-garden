@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Mail } from "lucide-react";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { projects } from "@/lib/projects-data";
 import { CopyButton } from "@/components/copy-button";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
@@ -39,12 +39,14 @@ export default async function SocialPage() {
           <Signature />
         </div>
       </div>
-      <NewsletterSubscribe
-        title="I also write deep dives in email"
-        description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
+      {siteMetadata.newsletterUrl && (
+        <NewsletterSubscribe
+          title="I also write deep dives in email"
+          description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."
-        buttonText="Send me the emails"
-      />
+          buttonText="Send me the emails"
+        />
+      )}
     </>
   );
 }

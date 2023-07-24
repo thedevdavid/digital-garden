@@ -85,13 +85,15 @@ const NewsletterSubscribe = ({ title, description, buttonText }: CTAProps) => {
               </Button>
             </form>
           </Form>
-          <div className="mt-4 flex items-center justify-center">
-            <Button asChild variant="ghost">
-              <Link href={siteMetadata.newsletterUrl} target="_blank">
-                Let me read it first <ArrowRight className="mr-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+          {siteMetadata.newsletterUrl && (
+            <div className="mt-4 flex items-center justify-center">
+              <Button asChild variant="ghost">
+                <Link href={siteMetadata.newsletterUrl} target="_blank">
+                  Let me read it first <ArrowRight className="mr-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          )}
         </div>
       </div>
 
