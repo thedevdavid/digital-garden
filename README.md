@@ -18,11 +18,14 @@ If you love this template and/or use it, please give it a star on GitHub. This w
 - [Motivation](#motivation)
 - [Getting Started](#getting-started)
   - [Writing content](#writing-content)
+    - [Frontmatter](#frontmatter)
   - [Deployment](#deployment)
 - [Customization](#customization)
   - [Fonts](#fonts)
   - [Colors](#colors)
   - [Metadata](#metadata)
+    - [Navigation](#navigation)
+    - [Social links](#social-links)
   - [Analytics](#analytics)
     - [Vercel](#vercel)
     - [Umami](#umami)
@@ -73,6 +76,19 @@ Editing list pages is done in the `lib` folder.
 - `/projects` - `lib/projects-data.ts`
 - `/social` - `lib/social-data.ts`
 
+#### Frontmatter
+
+Frontmatter is used to define metadata for pages and posts. It's located at the top of the file and is written in YAML. You can define the following fields:
+
+- `title` - The title of the page/post
+- `description` - The description of the page/post
+- `publishedDate` - The date of the post (not used on pages)
+- `lastUpdatedDate` - The date of the page/post
+- `tags` - List of tags for the post. You can add new tags by adding them to the `tagOptions` list. (not used on pages)
+- `series` - The series of the post. A series has a title and an order number for a post. (not used on pages)
+- `author` - The author of the post. An author has a name, and image. (not used on pages)
+- `status` - Whether the page/post is published or draft
+
 ### Deployment
 
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
@@ -106,7 +122,13 @@ Images and other media files are located in `public/` directory. You can use the
 
 You can change the metadata and author details in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
 
+#### Navigation
+
 You can edit navigation links in `lib/navigation-links.ts`.
+
+#### Social links
+
+You can edit social links in `lib/social-data.ts`. You can also add new social links by adding them to the file. Using the platform name as the key and the URL as the value. The `SocialButton` component will automatically add the icon for the platform if it's supported in [simple-icons](https://simpleicons.org/).
 
 ### Analytics
 
