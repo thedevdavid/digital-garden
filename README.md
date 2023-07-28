@@ -158,6 +158,8 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 ## Examples
 
 - [https://davidlevai.com/](https://davidlevai.com/)
+- [Shafie Mukhre's Blog](https://shafiemukhre.com) - [Source](https://github.com/shafiemukhre/website-2023)
+- [Dragons and Codes Digital Garden](https://dragonsandcodes.com) - [Source](https://github.com/dragonsandcodes/digital-garden-v2)
 
 **Create a PR and add your blog to this list if you're using the template!**
 
