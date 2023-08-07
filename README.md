@@ -234,6 +234,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
 - [ ] Rich project cards
+- [ ] Landing page/offer page/freebie page
 - [ ] CV template
 - [ ] Authenticated pages and/or hidden content (behind email address)
 - [ ] 100 lighthouse score

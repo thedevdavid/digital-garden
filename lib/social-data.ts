@@ -26,7 +26,7 @@ export const socialProfiles: SocialProfile[] = [
     link: "https://tiktok.com/@thedevdavid",
   },
   {
-    name: "twitter",
+    name: "x",
     link: "https://twitter.com/thedevdavid",
   },
   {
