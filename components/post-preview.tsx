@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post } from "@/.contentlayer/generated";
+import { Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { CalendarDays, Timer } from "lucide-react";
 

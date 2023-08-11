@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allPosts } from "@/.contentlayer/generated";
 import { PostSeries, SeriesItem } from "@/types";
+import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 

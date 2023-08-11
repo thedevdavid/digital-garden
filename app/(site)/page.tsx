@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allPages, allPosts } from "@/.contentlayer/generated";
+import { allPages, allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 

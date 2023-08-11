@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { allPosts } from "@/.contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 
 import { defaultAuthor } from "@/lib/metadata";

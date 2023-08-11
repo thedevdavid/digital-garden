@@ -17,7 +17,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </a>
       <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-      <main id="main-content">{children}</main>
+      <main className="mt-20" id="main-content">
+        {children}
+      </main>
       <Footer />
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

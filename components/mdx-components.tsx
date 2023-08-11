@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/image";
-import { Code } from "bright";
+import NextImage, { ImageProps } from "next/image";
+import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import type { TweetProps } from "react-tweet";
+import { Tweet } from "react-tweet";
 
-import { fileIcons } from "@/lib/bright-config";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 function YouTubeVideo({ id }: { id: string }) {
@@ -20,34 +20,31 @@ function YouTubeVideo({ id }: { id: string }) {
   );
 }
 
-function CustomLink(props: any) {
-  const href = props.href;
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const { href } = props;
   const isExternalLink = href && href.startsWith("http");
 
   if (isExternalLink) {
-    return <a target="_blank" {...props} />;
+    return <a target="_blank" href={href} rel="noopener noreferrer" {...props} />;
   }
   return (
-    // TODO: Figure out how to type this
-    // @ts-expect-error
-    <Link href={href}>{props.children}</Link>
+    //@ts-expect-error
+    <Link href={href} />
   );
 }
 
-Code.theme = {
-  dark: "github-dark",
-  light: "github-light",
-  lightSelector: "html.light",
-};
-Code.extensions = [fileIcons as any];
-Code.lineNumbers = true;
-
 const components = {
-  Image,
+  Image: (props: ImageProps) => <NextImage {...props} />,
   NewsletterSubscribe,
   YouTubeVideo,
-  pre: Code,
   // a: CustomLink,
+  Tweet: (props: TweetProps) => {
+    return (
+      <div className="not-prose [&>div]:mx-auto">
+        <Tweet {...props} />
+      </div>
+    );
+  },
 };
 
 interface MdxProps {

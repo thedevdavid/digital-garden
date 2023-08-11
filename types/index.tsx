@@ -1,5 +1,5 @@
 import { LinkProps } from "next/link";
-import { Post, Series } from "@/.contentlayer/generated";
+import { Post, Series } from "contentlayer/generated";
 
 export interface PostHeading {
   heading: number;

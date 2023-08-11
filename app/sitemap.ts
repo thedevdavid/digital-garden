@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { allPages, allPosts } from "@/.contentlayer/generated";
+import { allPages, allPosts } from "contentlayer/generated";
 
 import { tagOptions } from "@/lib/content-definitions/post";
 import { BASE_URL } from "@/lib/metadata";

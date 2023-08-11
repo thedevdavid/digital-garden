@@ -1,5 +1,5 @@
-import { Post } from "@/.contentlayer/generated";
 import { clsx, type ClassValue } from "clsx";
+import { Post } from "contentlayer/generated";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
