@@ -92,8 +92,8 @@ dependencies:
     specifier: 7.45.4
     version: 7.45.4(react@18.2.0)
   react-tweet:
-    specifier: 3.0.4
-    version: 3.0.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.1.1
+    version: 3.1.1(react-dom@18.2.0)(react@18.2.0)
   rehype-autolink-headings:
     specifier: 6.1.1
     version: 6.1.1
@@ -6569,9 +6569,9 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /react-tweet@3.0.4(react-dom@18.2.0)(react@18.2.0):
+  /react-tweet@3.1.1(react-dom@18.2.0)(react@18.2.0):
     resolution:
-      { integrity: sha512-cp2O8OnW3O5unYU4Txv2AW8g8HnqMx2kpFokTB4XnGbTt65zY2pzklWVM6pAg1lIO5n1Uikreh2cKszUKdAB/g== }
+      { integrity: sha512-8GQLa5y0G56kvGQkN7OiaKkjFAhWYVdyFq62ioY2qVtpMrjchVU+3KnqneCyp0+BemOQZkg6WWp/qoCNeEMH6A== }
     peerDependencies:
       react: ">= 18.0.0"
       react-dom: ">= 18.0.0"
