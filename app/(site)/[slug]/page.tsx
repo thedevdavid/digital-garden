@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { allPages } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 
 interface PageProps {
   params: {

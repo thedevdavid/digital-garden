@@ -1,5 +1,7 @@
 import { LinkProps } from "next/link";
-import { Post, Series } from "@/.contentlayer/generated";
+import { Post, Series } from "contentlayer/generated";
+
+import { AnnouncementBarProps } from "@/components/announcement-bar";
 
 export interface PostHeading {
   heading: number;
@@ -24,7 +26,7 @@ export interface MobileLinkProps extends LinkProps {
   className?: string;
 }
 
-export type AnalyticsProvider = "umami" | "vercel";
+export type AnalyticsProvider = "umami" | "vercel" | "plausible";
 
 export type SiteMetaData = {
   title: {
@@ -33,8 +35,14 @@ export type SiteMetaData = {
   };
   description: string;
   siteRepo: string;
-  newsletterUrl: string;
-  analyticsProvider: AnalyticsProvider;
+  newsletterUrl?: string;
+  analyticsProvider?: AnalyticsProvider;
+  defaultTheme: "light" | "dark" | "system";
+  activeAnnouncement: boolean;
+  announcement: Pick<AnnouncementBarProps, "buttonText" | "link">;
+  postsPerPage: number;
+  postsOnHomePage: number;
+  projectsOnHomePage: number;
 };
 
 export type SeriesItem = {
@@ -60,7 +68,7 @@ export type AuthorType = {
   email: string;
   website: string;
   jobTitle: string;
-  company: string;
+  company?: string;
   availableForWork: boolean;
   location: {
     city: string;

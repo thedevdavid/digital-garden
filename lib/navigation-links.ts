@@ -20,7 +20,7 @@ const content: ContentNavItem[] = [
   },
   {
     title: "Newsletter",
-    href: siteMetadata.newsletterUrl,
+    href: siteMetadata.newsletterUrl as string,
     description: "My newsletter about software development",
   },
   {

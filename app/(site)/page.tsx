@@ -1,18 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { allPages, allPosts } from "@/.contentlayer/generated";
-import { compareDesc } from "date-fns";
+import { allPages, allPosts } from "contentlayer/generated";
 import { ArrowRight } from "lucide-react";
 
-import { defaultAuthor } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { sortByDate } from "@/lib/utils";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import PostPreview from "@/components/post-preview";
 
@@ -30,10 +28,8 @@ export default async function Home() {
   const aboutPage = await getAboutPage();
   const posts = allPosts
     .filter((post) => post.status === "published")
-    .sort((a, b) =>
-      compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
-    )
-    .slice(0, 8);
+    .sort(sortByDate)
+    .slice(0, siteMetadata.postsOnHomePage);
 
   return (
     <div className="pb-10">
@@ -61,12 +57,14 @@ export default async function Home() {
           </aside>
         </div>
       </div>
-      <NewsletterSubscribe
-        title="I also write deep dives in email"
-        description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
+      {siteMetadata.newsletterUrl && (
+        <NewsletterSubscribe
+          title="I also write deep dives in email"
+          description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
             getting better in business. Unsubscribe whenever."
-        buttonText="Send me the emails"
-      />
+          buttonText="Send me the emails"
+        />
+      )}
       {aboutPage && (
         <div className="container max-w-6xl">
           <h2 className="mb-8 font-heading text-4xl font-bold">Who&apos;s this girl again?</h2>

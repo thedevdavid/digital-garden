@@ -3,7 +3,7 @@
 ![Image2](/screenshots/garden2.png)
 [More screenshots here](/screenshots/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/thedevdavid/digital-garden)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthedevdavid%2Fdigital-garden%2F)
 
 An open source blogging (digital gardening) template for developers using [Next.js](https://nextjs.org/) app router, MDX, [Contentlayer](https://contentlayer.dev/), [Tailwind CSS](https://tailwindcss.com/), [@shadcn/ui](https://ui.shadcn.com/) , [Lucide Icons](https://lucide.dev/icons), and more.
 
@@ -18,14 +18,18 @@ If you love this template and/or use it, please give it a star on GitHub. This w
 - [Motivation](#motivation)
 - [Getting Started](#getting-started)
   - [Writing content](#writing-content)
+    - [Frontmatter](#frontmatter)
   - [Deployment](#deployment)
 - [Customization](#customization)
   - [Fonts](#fonts)
   - [Colors](#colors)
   - [Metadata](#metadata)
+    - [Navigation](#navigation)
+    - [Social links](#social-links)
   - [Analytics](#analytics)
     - [Vercel](#vercel)
     - [Umami](#umami)
+    - [Plausible](#plausible)
     - [Other analytics providers](#other-analytics-providers)
   - [Newsletter subscription](#newsletter-subscription)
     - [MailerLite](#mailerlite)
@@ -73,6 +77,19 @@ Editing list pages is done in the `lib` folder.
 - `/projects` - `lib/projects-data.ts`
 - `/social` - `lib/social-data.ts`
 
+#### Frontmatter
+
+Frontmatter is used to define metadata for pages and posts. It's located at the top of the file and is written in YAML. You can define the following fields:
+
+- `title` - The title of the page/post
+- `description` - The description of the page/post
+- `publishedDate` - The date of the post (not used on pages)
+- `lastUpdatedDate` - The date of the page/post
+- `tags` - List of tags for the post. You can add new tags by adding them to the `tagOptions` list. (not used on pages)
+- `series` - The series of the post. A series has a title and an order number for a post. (not used on pages)
+- `author` - The author of the post. An author has a name, and image. (not used on pages)
+- `status` - Whether the page/post is published or draft
+
 ### Deployment
 
 You can deploy the project with [Vercel](https://vercel.com/) or any other hosting provider. If you want to use Vercel, you can use the button at the top of this README.
@@ -106,7 +123,13 @@ Images and other media files are located in `public/` directory. You can use the
 
 You can change the metadata and author details in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
 
+#### Navigation
+
 You can edit navigation links in `lib/navigation-links.ts`.
+
+#### Social links
+
+You can edit social links in `lib/social-data.ts`. You can also add new social links by adding them to the file. Using the platform name as the key and the URL as the value. The `SocialButton` component will automatically add the icon for the platform if it's supported in [simple-icons](https://simpleicons.org/).
 
 ### Analytics
 
@@ -120,6 +143,13 @@ Umami is a simple, easy to use, web analytics solution with self-hosting option!
 
 Configure:
 Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
+
+#### Plausible
+
+Plausible is a simple, lightweight, open-source alternative to Google Analytics. You can read more about it on [Plausible website](https://plausible.io/).
+
+Configure:
+Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` & `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` environment variables on your `.env.local` file and on Vercel dashboard. If you're concerned about ad blockers, you can proxy the plausible script through your own domain. You can read more about it [here](https://plausible.io/docs/proxy/guides/nextjs).
 
 #### Other analytics providers
 
@@ -151,15 +181,15 @@ You can choose between 3 different hero variants to use in `app/(site)/page.tsx`
 
 #### Image optimization
 
-Optimize images in seconds for free with ImageOptim. Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
+I recommend optimizing images fast for free with [ImageOptim](https://imageoptim.com/mac). Install on your Mac, then open the `public` folder in Finder. Select all images, right-click, and choose "Open with > ImageOptim". This will optimize all images in the folder.
 
 Note: DO NOT overdo it. You can easily make images look bad with lossy compression algorithms.
 
 ## Examples
 
-- [https://davidlevai.com/](https://davidlevai.com/)
+- [https://davidlevai.com/](https://davidlevai.com/) - My own digital garden
+- [Dragons and Codes Digital Garden](https://dragonsandcodes.com) - Simple modifications [Source](https://github.com/dragonsandcodes/digital-garden-v2)
 - [Shafie Mukhre's Blog](https://shafiemukhre.com) - [Source](https://github.com/shafiemukhre/website-2023)
-- [Dragons and Codes Digital Garden](https://dragonsandcodes.com) - [Source](https://github.com/dragonsandcodes/digital-garden-v2)
 
 **Create a PR and add your blog to this list if you're using the template!**
 
@@ -182,7 +212,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] projects page
 - [x] about section on homepage
 - [x] search & command bar
-- [x] Analytics: Vercel, Umami
+- [x] Analytics: Vercel, Umami, Plausible
 - [x] Post series
 - [x] Not found page
 - [x] contributing docs
@@ -192,38 +222,46 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] Social sharing buttons
 - [x] Tags
 - [x] newsletter integration (form, api route, keys, thank you/welcome page, MailerLite provider)
+- [x] more MDX components (katex, math)
+- [x] author content definition
+- [x] SEO improvements
 - [ ] Other newsletter providers (Convertkit, Substack, Buttondown, Mailchimp, etc)
-- [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
-- [ ] CLI and/or recipes
+- [ ] Other analytics providers (fathom, simplelytics, etc)
+- [ ] RTL Support
 - [ ] Post series page
 - [ ] prev/next post links
-- [ ] related posts
+- [ ] related/similar posts
+- [ ] Donate component & page
+- [ ] CLI and/or recipes
 - [ ] Newsletter previous issues page
 - [ ] Layouts/templates system
 - [ ] Notion data source
 - [ ] Sanity data source
-- [ ] hero title and subtitle text HTML support(?)
 - [ ] Design improvements (whitespace, layout, etc.)
-- [ ] error, and loading pages
+- [ ] lightbox for images
+- [ ] implement content security policies
 - [ ] Code preview component
 - [ ] Code highlight improvements (copy code, theme)
-- [ ] `manifest.json`
 - [ ] Rich project cards
+- [ ] Landing page/offer page/freebie page
 - [ ] CV template
 - [ ] Authenticated pages and/or hidden content (behind email address)
 - [ ] 100 lighthouse score
 - [ ] Command bar fuzzy search in content
-- [ ] Pagination
-- [ ] SEO improvements
 - [ ] Accessibility audit
+- [ ] more MDX components (oembed)
+- [ ] error, and loading pages
 - [ ] TypeScript fixes
+- [ ] Redesign social page (link in bio)
 - [ ] Redesign uses page
 - [ ] Redesign projects page
 - [ ] general refactor
 - [ ] general cleanup
-- [ ] implement content security policies
 - [ ] implement a videoask-like solution for the hero section
 - [ ] RSS feed improvements (image, description, etc.)
+- [ ] custom admin CMS(?)
+- [ ] hero title and subtitle text HTML support(?)
+- [ ] Pagination (?)
 - [ ] multi-author support (?)
 - [ ] Post like counter (?)
 - [ ] Visitor counter (?)

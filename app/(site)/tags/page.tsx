@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allPosts } from "@/.contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 
 import siteMetadata from "@/lib/metadata";
 import { getTagsWithCount } from "@/lib/utils";

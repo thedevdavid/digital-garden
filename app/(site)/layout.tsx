@@ -1,3 +1,5 @@
+import siteMetadata from "@/lib/metadata";
+import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 
@@ -17,7 +19,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </a>
       <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-      <main id="main-content">{children}</main>
+      <main className={cn("mt-20", siteMetadata.activeAnnouncement && "mt-32 pt-28 md:pt-0")} id="main-content">
+        {children}
+      </main>
       <Footer />
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
