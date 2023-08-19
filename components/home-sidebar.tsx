@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Pencil } from "lucide-react";
 
-import { defaultAuthor } from "@/lib/metadata";
+import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { projects } from "@/lib/projects-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -45,7 +45,7 @@ export function Sidebar({ className, ...props }: CardProps) {
           <CardTitle>What am I working on?</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4">
-          {projects.map((project) => (
+          {projects.slice(0, siteMetadata.projectsOnHomePage).map((project) => (
             <Link
               href={project.href}
               target="_blank"

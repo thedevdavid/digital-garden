@@ -1,6 +1,8 @@
 import { LinkProps } from "next/link";
 import { Post, Series } from "contentlayer/generated";
 
+import { AnnouncementBarProps } from "@/components/announcement-bar";
+
 export interface PostHeading {
   heading: number;
   text: string;
@@ -36,6 +38,12 @@ export type SiteMetaData = {
   newsletterUrl?: string;
   analyticsProvider?: AnalyticsProvider;
   defaultTheme: "light" | "dark" | "system";
+  announcement?: AnnouncementBarProps & {
+    isActive: boolean;
+  };
+  postsPerPage: number;
+  postsOnHomePage: number;
+  projectsOnHomePage: number;
 };
 
 export type SeriesItem = {
