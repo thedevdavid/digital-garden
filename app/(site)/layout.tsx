@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </a>
       <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-      <main className={cn("mt-20", siteMetadata?.announcement?.isActive && "pt-28 md:pt-0")} id="main-content">
+      <main className={cn("mt-20", siteMetadata.activeAnnouncement && "pt-28 md:pt-0")} id="main-content">
         {children}
       </main>
       <Footer />
