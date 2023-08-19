@@ -6,9 +6,9 @@ type YouTubeVideoProps = {
 
 export function YouTubeVideo({ id, className, ...props }: YouTubeVideoProps & React.HTMLAttributes<HTMLIFrameElement>) {
   return (
-    <div>
+    <div className={cn("mx-auto aspect-video", className)}>
       <iframe
-        className={cn("aspect-video w-full", className)}
+        className="h-full w-full"
         src={"https://www.youtube.com/embed/" + id}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
