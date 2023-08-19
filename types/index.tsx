@@ -26,7 +26,7 @@ export interface MobileLinkProps extends LinkProps {
   className?: string;
 }
 
-export type AnalyticsProvider = "umami" | "vercel";
+export type AnalyticsProvider = "umami" | "vercel" | "plausible";
 
 export type SiteMetaData = {
   title: {

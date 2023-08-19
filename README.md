@@ -29,6 +29,7 @@ If you love this template and/or use it, please give it a star on GitHub. This w
   - [Analytics](#analytics)
     - [Vercel](#vercel)
     - [Umami](#umami)
+    - [Plausible](#plausible)
     - [Other analytics providers](#other-analytics-providers)
   - [Newsletter subscription](#newsletter-subscription)
     - [MailerLite](#mailerlite)
@@ -143,6 +144,13 @@ Umami is a simple, easy to use, web analytics solution with self-hosting option!
 Configure:
 Set `NEXT_PUBLIC_UMAMI_SCRIPT_URL` & `NEXT_PUBLIC_UMAMI_WEBSITE_ID` environment variables on your `.env.local` file and on Vercel dashboard.
 
+#### Plausible
+
+Plausible is a simple, lightweight, open-source alternative to Google Analytics. You can read more about it on [Plausible website](https://plausible.io/).
+
+Configure:
+Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` & `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` environment variables on your `.env.local` file and on Vercel dashboard. If you're concerned about ad blockers, you can proxy the plausible script through your own domain. You can read more about it [here](https://plausible.io/docs/proxy/guides/nextjs).
+
 #### Other analytics providers
 
 Supporting other analytics providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
@@ -203,7 +211,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] projects page
 - [x] about section on homepage
 - [x] search & command bar
-- [x] Analytics: Vercel, Umami
+- [x] Analytics: Vercel, Umami, Plausible
 - [x] Post series
 - [x] Not found page
 - [x] contributing docs
@@ -215,9 +223,9 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] newsletter integration (form, api route, keys, thank you/welcome page, MailerLite provider)
 - [x] more MDX components (katex, math)
 - [x] author content definition
+- [x] SEO improvements
 - [ ] Other newsletter providers (Convertkit, Substack, Buttondown, Mailchimp, etc)
-- [ ] Other analytics providers (fathom, simplelytics, plausible, etc)
-- [ ] SEO improvements
+- [ ] Other analytics providers (fathom, simplelytics, etc)
 - [ ] RTL Support
 - [ ] Post series page
 - [ ] prev/next post links
