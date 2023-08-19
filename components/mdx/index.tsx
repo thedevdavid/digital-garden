@@ -4,8 +4,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import type { TweetProps } from "react-tweet";
 import { Tweet } from "react-tweet";
 
-import NewsletterSubscribe from "@/components/newsletter-subscribe";
-
+import { NewsletterCTA } from "./newsletter-cta";
 import { YouTubeVideo } from "./youtube-video";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
@@ -23,7 +22,7 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 
 const components = {
   Image: (props: ImageProps) => <NextImage {...props} />,
-  NewsletterSubscribe,
+  NewsletterCTA,
   YouTubeVideo,
   // a: CustomLink,
   Tweet: (props: TweetProps) => {

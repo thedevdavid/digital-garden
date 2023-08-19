@@ -14,11 +14,11 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 
-interface CTAProps {
+export type CTAProps = {
   title: string;
   description?: string;
   buttonText: string;
-}
+};
 
 const formSchema = z.object({
   email: z.string().email(),
