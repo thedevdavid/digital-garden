@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { allPosts } from "contentlayer/generated";
-import { compareDesc } from "date-fns";
 
 import { defaultAuthor } from "@/lib/metadata";
+import { sortByDate } from "@/lib/utils";
 import PostPreview from "@/components/post-preview";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -13,11 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Blog() {
-  const posts = allPosts
-    .filter((post) => post.status === "published")
-    .sort((a, b) =>
-      compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
-    );
+  const posts = allPosts.filter((post) => post.status === "published").sort(sortByDate);
 
   return (
     <div className="container mb-4">

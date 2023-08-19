@@ -6,19 +6,7 @@ import { Tweet } from "react-tweet";
 
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
-function YouTubeVideo({ id }: { id: string }) {
-  return (
-    <div>
-      <iframe
-        className="aspect-video w-full"
-        src={"https://www.youtube.com/embed/" + id}
-        title="YouTube Video Player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  );
-}
+import { YouTubeVideo } from "./youtube-video";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href } = props;

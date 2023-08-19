@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 import { PostSeriesBox } from "@/components/post-series-box";
 import { SocialShare } from "@/components/social-share";
 import { TableOfContents } from "@/components/table-of-contents";

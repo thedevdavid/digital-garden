@@ -14,7 +14,6 @@ export const HEADING_LINK_ANCHOR = `anchor-heading-link`;
 export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Post, Page],
-
   mdx: {
     esbuildOptions(options) {
       options.target = "esnext";
@@ -61,5 +60,7 @@ export default makeSource({
   },
   onSuccess: async (data) => {
     // write the data to a file, so we can use it in search
+    const { allDocuments } = await data();
+    console.log("allDocuments", allDocuments.length);
   },
 });

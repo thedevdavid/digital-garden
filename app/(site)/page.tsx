@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { allPages, allPosts } from "contentlayer/generated";
-import { compareDesc } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
 import siteMetadata, { defaultAuthor } from "@/lib/metadata";
+import { sortByDate } from "@/lib/utils";
 import { HeroImage } from "@/components/hero-image";
 import { HeroMinimal } from "@/components/hero-minimal";
 import { HeroSimple } from "@/components/hero-simple";
 import { HeroVideo } from "@/components/hero-video";
 import { Sidebar } from "@/components/home-sidebar";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import PostPreview from "@/components/post-preview";
 
@@ -28,10 +28,8 @@ export default async function Home() {
   const aboutPage = await getAboutPage();
   const posts = allPosts
     .filter((post) => post.status === "published")
-    .sort((a, b) =>
-      compareDesc(new Date(a.lastUpdatedDate || a.publishedDate), new Date(b.lastUpdatedDate || b.publishedDate))
-    )
-    .slice(0, 8);
+    .sort(sortByDate)
+    .slice(0, siteMetadata.postsOnHomePage);
 
   return (
     <div className="pb-10">

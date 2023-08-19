@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import siteMetadata from "@/lib/metadata";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -23,14 +24,22 @@ const formSchema = z.object({
   email: z.string().email(),
 });
 
-const NewsletterSubscribe = ({ title, description, buttonText }: CTAProps) => {
+const NewsletterSubscribe = ({
+  title,
+  description,
+  buttonText,
+  className,
+  ...props
+}: CTAProps & React.HTMLAttributes<HTMLDivElement>) => {
   const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
     },
   });
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const response = await fetch("/newsletter", {
       method: "POST",
@@ -51,13 +60,16 @@ const NewsletterSubscribe = ({ title, description, buttonText }: CTAProps) => {
     }
 
     return toast({
-      title: "Success.",
+      title: "🎉 Nice!",
       description: "You'll get the emails now.",
     });
   };
 
   return (
-    <section className="relative isolate my-24 overflow-hidden bg-primary py-6 text-primary-foreground">
+    <section
+      className={cn("relative isolate my-24 overflow-hidden bg-primary py-6 text-primary-foreground", className)}
+      {...props}
+    >
       <div className="p-8 md:p-12">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-heading text-2xl font-bold md:text-3xl">{title}</h2>
