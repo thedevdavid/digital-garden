@@ -1,3 +1,5 @@
+import siteMetadata from "@/lib/metadata";
+import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 
@@ -17,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </a>
       <Navigation />
       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-      <main className="mt-20" id="main-content">
+      <main className={cn("mt-20", siteMetadata?.announcement?.isActive && "pt-28 md:pt-0")} id="main-content">
         {children}
       </main>
       <Footer />

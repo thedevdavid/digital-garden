@@ -33,8 +33,8 @@ const siteMetadata: SiteMetaData = {
   newsletterUrl: "https://developreneur.davidlevai.com",
   analyticsProvider: "umami",
   defaultTheme: "system",
+  activeAnnouncement: true,
   announcement: {
-    isActive: true,
     buttonText: "Support on DevHunt →",
     link: "https://devhunt.org/tool/modern-developer-blog-template-digital-garden-starter",
   },

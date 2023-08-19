@@ -38,9 +38,8 @@ export type SiteMetaData = {
   newsletterUrl?: string;
   analyticsProvider?: AnalyticsProvider;
   defaultTheme: "light" | "dark" | "system";
-  announcement?: AnnouncementBarProps & {
-    isActive: boolean;
-  };
+  activeAnnouncement: boolean;
+  announcement: Pick<AnnouncementBarProps, "buttonText" | "link">;
   postsPerPage: number;
   postsOnHomePage: number;
   projectsOnHomePage: number;
