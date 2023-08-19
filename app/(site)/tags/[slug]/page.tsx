@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allPosts, Post } from "@/.contentlayer/generated";
-import { compareDesc } from "date-fns";
+import { allPosts, Post } from "contentlayer/generated";
 
+import { sortByDate } from "@/lib/utils";
 import PostPreview from "@/components/post-preview";
 
 // Get sorted articles from the contentlayer
@@ -33,7 +33,7 @@ export default async function TagPage({ params }: { params: { slug: string } }) 
   const posts = allPosts
     .filter((post) => post.status === "published")
     .filter((post) => post.tags?.includes(tag))
-    .sort((a, b) => compareDesc(new Date(a.publishedDate), new Date(b.publishedDate)));
+    .sort(sortByDate);
 
   if (!posts) {
     notFound();

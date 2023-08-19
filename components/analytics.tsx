@@ -15,6 +15,15 @@ export const Analytics = () => {
             src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
           />
         );
+      case "plausible":
+        return (
+          <Script
+            async
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src={process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL}
+          />
+        );
       case "vercel":
         return <VercelAnalytics />;
       default:

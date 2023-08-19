@@ -3,7 +3,9 @@ import { AuthorType, SiteMetaData } from "@/types";
 import { socialProfiles } from "./social-data";
 
 export const BASE_URL =
-  process.env.VERCEL_URL || process.env.NEXT_PUBLIC_BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
+  `https://${process.env.VERCEL_URL}` ||
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  `http://localhost:${process.env.PORT || 3000}`;
 
 export const defaultAuthor: AuthorType = {
   name: "Amy Shields",
@@ -32,6 +34,15 @@ const siteMetadata: SiteMetaData = {
   siteRepo: "https://github.com/thedevdavid/digital-garden",
   newsletterUrl: "https://developreneur.davidlevai.com",
   analyticsProvider: "umami",
+  defaultTheme: "system",
+  activeAnnouncement: true,
+  announcement: {
+    buttonText: "Support on DevHunt →",
+    link: "https://devhunt.org/tool/modern-developer-blog-template-digital-garden-starter",
+  },
+  postsPerPage: 10,
+  postsOnHomePage: 8,
+  projectsOnHomePage: 4,
 };
 
 export default siteMetadata;
