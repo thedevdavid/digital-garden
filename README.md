@@ -23,6 +23,9 @@ If you love this template and/or use it, please give it a star on GitHub. This w
 - [Customization](#customization)
   - [Fonts](#fonts)
   - [Colors](#colors)
+  - [Signature](#signature)
+  - [Images](#images)
+    - [Homepage Avatar](#homepage-avatar)
   - [Metadata](#metadata)
     - [Navigation](#navigation)
     - [Social links](#social-links)
@@ -119,6 +122,10 @@ There's a signature component to use in the footer. You can edit the signature o
 
 Images and other media files are located in `public/` directory. You can use them in your content by using the `/<filename>.<ext>` path.
 
+#### Homepage Avatar
+
+Here's a quick tutorial on how to make a similar avatar in Figma in under 2 minutes. [https://youtu.be/Ny-VaEEhJKM](https://youtu.be/Ny-VaEEhJKM)
+
 ### Metadata
 
 You can change the metadata and author details in `utils/metadata.ts`. This will be used around the site for titles, social links, social handles, SEO, etc.
@@ -129,7 +136,7 @@ You can edit navigation links in `lib/navigation-links.ts`.
 
 #### Social links
 
-You can edit social links in `lib/social-data.ts`. You can also add new social links by adding them to the file. Using the platform name as the key and the URL as the value. The `SocialButton` component will automatically add the icon for the platform if it's supported in [simple-icons](https://simpleicons.org/).
+You can edit social links in `lib/social-data.ts`. You can also add new social links by adding them to the file and using the platform name as the key and the URL as the value. The `SocialButton` component will automatically add the icon for the platform if it's supported in [simple-icons](https://simpleicons.org/).
 
 ### Analytics
 
