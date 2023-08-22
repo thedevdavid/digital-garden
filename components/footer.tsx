@@ -12,7 +12,7 @@ const Footer = () => {
       <Signature />
       <div className="container flex flex-col items-center justify-between space-y-5 text-center lg:flex-row lg:space-y-0 lg:text-left">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0 lg:order-2">
-          <div className="flex flex-row space-x-2 text-sm text-muted-foreground">
+          <div className="flex flex-col space-x-2 text-sm text-muted-foreground md:flex-row">
             {defaultAuthor.socialProfiles.map((platform) => (
               <SocialButton
                 key={platform.name}
@@ -32,7 +32,7 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground md:text-left">
             &copy; {new Date().getFullYear()} Built by {defaultAuthor.name}. &nbsp;
             <a
-              href={defaultAuthor.socialProfiles.find((platform) => platform.name === "twitter")?.link}
+              href={defaultAuthor.socialProfiles.find((platform) => platform.name === "x")?.link}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
