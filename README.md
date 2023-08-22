@@ -1,6 +1,6 @@
 # Modern Developer Blog Template (Digital Garden Starter)
 
-![Image2](/screenshots/garden2.png)
+![GardenPromo](/screenshots/garden-promo.jpg)
 [More screenshots here](/screenshots/)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthedevdavid%2Fdigital-garden%2F)
