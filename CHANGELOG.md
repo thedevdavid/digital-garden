@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2023-08-22
+
+### Added
+
+- Google Analytics provider
+
+### Fixed
+
+- Footer social icons responsive issues
+
 ## [0.7.0] - 2023-08-19
 
 ### Added
