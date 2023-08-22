@@ -1,6 +1,6 @@
 # Modern Developer Blog Template (Digital Garden Starter)
 
-![Image2](/screenshots/garden2.png)
+![GardenPromo](/screenshots/garden-promo.jpg)
 [More screenshots here](/screenshots/)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fthedevdavid%2Fdigital-garden%2F)
@@ -33,6 +33,7 @@ If you love this template and/or use it, please give it a star on GitHub. This w
     - [Vercel](#vercel)
     - [Umami](#umami)
     - [Plausible](#plausible)
+    - [Google Analytics](#google-analytics)
     - [Other analytics providers](#other-analytics-providers)
   - [Newsletter subscription](#newsletter-subscription)
     - [MailerLite](#mailerlite)
@@ -158,6 +159,13 @@ Plausible is a simple, lightweight, open-source alternative to Google Analytics.
 Configure:
 Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` & `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` environment variables on your `.env.local` file and on Vercel dashboard. If you're concerned about ad blockers, you can proxy the plausible script through your own domain. You can read more about it [here](https://plausible.io/docs/proxy/guides/nextjs).
 
+#### Google Analytics
+
+Google Analytics is a web analytics service offered by Google that tracks and reports website traffic, currently as a platform inside the Google Marketing Platform brand. You can read more about it on [Google Analytics website](https://analytics.google.com/).
+
+Configure:
+Set `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` environment variable on your `.env.local` file and on Vercel dashboard.
+
 #### Other analytics providers
 
 Supporting other analytics providers are in progress. Feel free to open an issue if you have any suggestions or a PR if you want to implement it yourself.
@@ -219,7 +227,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [x] projects page
 - [x] about section on homepage
 - [x] search & command bar
-- [x] Analytics: Vercel, Umami, Plausible
+- [x] Analytics: Vercel, Umami, Plausible, Google Analytics
 - [x] Post series
 - [x] Not found page
 - [x] contributing docs
