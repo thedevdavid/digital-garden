@@ -39,7 +39,7 @@ export default async function Home() {
       />
       <div className="container mt-12 max-w-6xl">
         <div className="grid grid-cols-1 place-items-start justify-between gap-12 lg:grid-cols-3">
-          <div className="col-span-1 lg:col-span-2">
+          <div className="col-span-1 w-full lg:col-span-2">
             <div className="grid grid-flow-row gap-2">
               {posts.map((post) => (
                 <PostPreview key={post._id} post={post} />
