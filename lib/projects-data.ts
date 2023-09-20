@@ -1,9 +1,9 @@
 export const projects = [
   {
-    title: "Beginner software dev roadmap",
-    description: `I made this in collaboration with @dragonsandcodes`,
-    href: "https://dragons-and-codes.notion.site/100-days-of-becoming-a-full-stack-developer-challenge-dragonsandcodeschallenge-0dfc9f2e19784a498e0bbd05fa199f9c?ref=thedevdavid",
-    mediaSrc: "/project-notion.png",
+    title: "ProductEngineerJobs.co",
+    description: `Job board for product engineers. Built with Next.js, Tailwind CSS, and Airtable.`,
+    href: "https://productengineerjobs.co",
+    mediaSrc: "/project-pejobs.png",
     mediaType: "image",
   },
   {
