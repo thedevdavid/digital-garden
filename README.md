@@ -206,6 +206,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [Dragons and Codes Digital Garden](https://dragonsandcodes.com) - Simple modifications [Source](https://github.com/dragonsandcodes/digital-garden-v2)
 - [Shafie Mukhre's Blog](https://shafiemukhre.com) - [Source](https://github.com/shafiemukhre/website-2023)
 - [Praveen kumars's Blog](https://sumandeepuniversity.org) - [Source](https://github.com/gramythedj/digital-garden)
+- [Steven Selolo's Blog](https://stevenselolo.com/) - [Source](https://github.com/StevenPss/website-2023)
 
 
 **Create a PR and add your blog to this list if you're using the template!**
