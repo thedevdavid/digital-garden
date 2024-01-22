@@ -42,7 +42,7 @@ export const SocialShare = ({ url, text }: SocialShareProps) => {
             >
               <path d={siTwitter.path}></path>
             </svg>
-            Twitter
+            X (formerly Twitter)
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>

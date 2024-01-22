@@ -3,8 +3,9 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { DialogProps } from "@radix-ui/react-alert-dialog";
-import { File, Github, Laptop, Mail, Moon, Sun, Twitter } from "lucide-react";
+import { File, Laptop, Mail, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { siGithub, siX } from "simple-icons";
 
 import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { navigationLinks } from "@/lib/navigation-links";
@@ -101,12 +102,20 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
             <CommandItem
               onSelect={() => {
                 runCommand(() =>
-                  navigate(defaultAuthor.socialProfiles.find((platform) => platform.name === "twitter")?.link as string)
+                  navigate(defaultAuthor.socialProfiles.find((platform) => platform.name === "x")?.link as string)
                 );
               }}
             >
-              <Twitter className="mr-2 h-4 w-4" />
-              <span>Twitter</span>
+              <svg
+                role="img"
+                viewBox="0 0 24 24"
+                className="mr-2 h-4 w-4"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d={siX.path}></path>
+              </svg>
+              <span>X (formerly Twitter)</span>
             </CommandItem>
             <CommandItem
               onSelect={() => {
@@ -115,7 +124,15 @@ export function CommandDialogComponent({ ...props }: DialogProps) {
                 );
               }}
             >
-              <Github className="mr-2 h-4 w-4" />
+              <svg
+                role="img"
+                viewBox="0 0 24 24"
+                className="mr-2 h-4 w-4"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d={siGithub.path}></path>
+              </svg>
               <span>Github</span>
             </CommandItem>
           </CommandGroup>
