@@ -207,6 +207,7 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [Shafie Mukhre's Blog](https://shafiemukhre.com) - [Source](https://github.com/shafiemukhre/website-2023)
 - [Praveen kumars's Blog](https://sumandeepuniversity.org) - [Source](https://github.com/gramythedj/digital-garden)
 - [Steven Selolo's Blog](https://stevenselolo.com/) - [Source](https://github.com/StevenPss/website-2023)
+- [Marton's Blog](https://www.martondobos.com/) - [Source](https://github.com/dobosmarton/digital-garden)
 
 
 **Create a PR and add your blog to this list if you're using the template!**
