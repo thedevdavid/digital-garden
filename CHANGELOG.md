@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Importing brand icons from simple-icons
+- Using "X (formerly Twitter)" as the name of the X user profile link
+
+### Fixed
+
+- Selecting X social link based on name X instead of twitter
+
 ## [0.7.2] - 2023-09-02
 
 ### Changed
