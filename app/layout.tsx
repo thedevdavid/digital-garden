@@ -38,7 +38,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 antialiased dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-slate-50">
-        <ThemeProvider attribute="class" defaultTheme={siteMetadata.defaultTheme} enableSystem>
+        <ThemeProvider
+          storageKey="digital-garden-theme"
+          attribute="class"
+          defaultTheme={siteMetadata.defaultTheme}
+          enableSystem
+        >
           {children}
           <BackTopButton />
           <Toaster />
