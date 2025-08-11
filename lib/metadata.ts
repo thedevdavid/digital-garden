@@ -8,16 +8,16 @@ export const BASE_URL =
   `http://localhost:${process.env.PORT || 3000}`;
 
 export const defaultAuthor: AuthorType = {
-  name: "Amy Shields",
-  handle: "@amyshieldsfake",
+  name: "Originalform",
+  handle: "",
   socialProfiles,
   email: "definitelyfake@nevermind.com",
   website: "https://nextjs.org",
-  jobTitle: "Frontend Engineer & UI Designer",
-  company: "Unicorns & Co.",
+  jobTitle: "Vision for Digital Age",
+  company: "",
   availableForWork: true,
   location: {
-    city: "Los Angeles",
+    city: "Unity and Cooperation",
     media: "/losangeles.jpg",
   },
 };
@@ -36,7 +36,7 @@ const siteMetadata: SiteMetaData = {
   newsletterUrl: "https://developreneur.davidlevai.com",
   analyticsProvider: "umami",
   defaultTheme: "system",
-  activeAnnouncement: true,
+  activeAnnouncement: false,
   announcement: {
     buttonText: "Support on DevHunt →",
     link: "https://devhunt.org/tool/modern-developer-blog-template-digital-garden-starter",

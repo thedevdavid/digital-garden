@@ -34,7 +34,7 @@ export default async function Home() {
   return (
     <div className="pb-10">
       <HeroSimple
-        title="Building hackin’ cool digital products around the world 🌴."
+        title="Building Decentralised Co-operative Communities 🌴."
         subtitle="I'm Amy. Frontend engineer writing code and blog on the internet."
       />
       <div className="container mt-12 max-w-6xl">
@@ -59,23 +59,22 @@ export default async function Home() {
       </div>
       {siteMetadata.newsletterUrl && (
         <NewsletterSubscribe
-          title="I also write deep dives in email"
-          description="I write about coding, design, digital nomad life, and solopreneurship. Join over 1,000 other developers in
-            getting better in business. Unsubscribe whenever."
+          title="Subscibe for deep dives in email"
+          description="Originalform offers frameworks, writing, and quiet strategies for builders, creatives, and founders navigating transitions, scaling clarity, and structuring their vision."
           buttonText="Send me the emails"
         />
       )}
       {aboutPage && (
         <div className="container max-w-6xl">
-          <h2 className="mb-8 font-heading text-4xl font-bold">Who&apos;s this girl again?</h2>
+          <h2 className="mb-8 font-heading text-4xl font-bold">What is our Purpose?</h2>
           <div className="grid grid-cols-1 place-items-start justify-between gap-12 lg:grid-cols-3">
             <div className="col-span-1 mx-auto flex flex-col items-center justify-center">
               <Image
-                src="/avatar-home.png"
-                alt={defaultAuthor.name}
-                width={400}
-                height={498}
-                className="h-auto w-72 -rotate-1 hover:rotate-3"
+                src="/globe-outline.svg"
+                alt="Site logo"
+                width={200}
+                height={200}
+                className="h-auto w-48"
               />
               <div className="text-center">
                 <h1 className="font-heading text-2xl font-bold">{defaultAuthor.name}</h1>

@@ -128,7 +128,7 @@ export default async function PostPage({ params }: PostProps) {
           </li>
         </ol>
       </nav>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row lg:gap-8">
         <div className="lg:hidden">
           <div className="mb-4 mt-1 text-sm leading-snug text-muted-foreground">
             <p className="mb-2">{`${post.readTimeMinutes} mins read`}</p>
@@ -147,7 +147,7 @@ export default async function PostPage({ params }: PostProps) {
             </AccordionItem>
           </Accordion>
         </div>
-        <article className="prose max-w-7xl dark:prose-invert hover:prose-a:text-accent-foreground prose-a:prose-headings:mb-3 prose-a:prose-headings:mt-8 prose-a:prose-headings:font-heading prose-a:prose-headings:font-bold prose-a:prose-headings:leading-tight prose-a:prose-headings:no-underline lg:mr-auto lg:max-w-2xl">
+        <article className="prose max-w-7xl dark:prose-invert hover:prose-a:text-accent-foreground prose-a:prose-headings:mb-3 prose-a:prose-headings:mt-8 prose-a:prose-headings:font-heading prose-a:prose-headings:font-bold prose-a:prose-headings:leading-tight prose-a:prose-headings:no-underline lg:max-w-2xl lg:pr-8">
           <h1 className="mb-2 font-heading">{post.title}</h1>
           {post.description && (
             <p className="mb-2 mt-0 text-xl text-slate-700 dark:text-slate-200">{post.description}</p>

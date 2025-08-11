@@ -16,7 +16,7 @@ export function Sidebar({ className, ...props }: CardProps) {
     <>
       <Card className={cn("mb-4", className)} {...props}>
         <CardHeader>
-          <CardTitle>Where am I currently?</CardTitle>
+          <CardTitle>What is our principle?</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4">
           <div className="flex items-center rounded-md pl-2 hover:bg-background/40 hover:backdrop-blur-lg">
@@ -24,7 +24,7 @@ export function Sidebar({ className, ...props }: CardProps) {
             <p className="ml-2 mr-auto text-sm font-medium leading-none">{defaultAuthor.location.city}</p>
             <Image
               src={defaultAuthor.location.media}
-              alt="Los Angeles"
+              alt="Unity and Cooperation"
               width={56}
               height={56}
               className="h-16 w-16 rounded-md object-cover"
@@ -40,7 +40,7 @@ export function Sidebar({ className, ...props }: CardProps) {
       </Card>
       <Card className={cn(className)} {...props}>
         <CardHeader>
-          <CardTitle>What am I working on?</CardTitle>
+          <CardTitle>What we are working on?</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4">
           {projects.slice(0, siteMetadata.projectsOnHomePage).map((project) => (
