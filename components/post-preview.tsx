@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { CalendarDays, Timer } from "lucide-react";
 
+import type { Post } from "@/lib/content-types";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 

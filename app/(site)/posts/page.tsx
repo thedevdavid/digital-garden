@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 
 import { defaultAuthor } from "@/lib/metadata";
 import { sortByDate } from "@/lib/utils";

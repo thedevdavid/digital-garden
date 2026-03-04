@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allPosts, Post } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 
+import type { Post } from "@/lib/content-types";
 import { sortByDate } from "@/lib/utils";
 import PostPreview from "@/components/post-preview";
 
-// Get sorted articles from the contentlayer
+// Get sorted articles from content collections
 async function getSortedArticles(): Promise<Post[]> {
   let articles = await allPosts;
 

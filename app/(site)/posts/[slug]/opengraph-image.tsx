@@ -1,5 +1,5 @@
-import { ImageResponse } from "next/server";
-import { allPosts } from "contentlayer/generated";
+import { ImageResponse } from "next/og";
+import { allPosts } from "content-collections";
 import { format, parseISO } from "date-fns";
 
 import { defaultAuthor } from "@/lib/metadata";

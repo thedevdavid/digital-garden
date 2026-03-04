@@ -1,6 +1,6 @@
 import { LinkProps } from "next/link";
-import { Post, Series } from "contentlayer/generated";
 
+import type { Post, Series } from "@/lib/content-types";
 import { AnnouncementBarProps } from "@/components/announcement-bar";
 
 export interface PostHeading {

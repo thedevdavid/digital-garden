@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
-import { allPages, allPosts } from "contentlayer/generated";
+import { allPages, allPosts } from "content-collections";
 
-import { tagOptions } from "@/lib/content-definitions/post";
 import { BASE_URL } from "@/lib/metadata";
+import { tagOptions } from "@/lib/tag-options";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

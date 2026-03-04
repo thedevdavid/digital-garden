@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PostSeries, SeriesItem } from "@/types";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-collections";
 import { format, parseISO } from "date-fns";
 import { Home } from "lucide-react";
 
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
 
 export async function generateStaticParams(): Promise<PostProps["params"][]> {
   return allPosts.map((post) => ({
-    slug: `/posts/${post._raw.flattenedPath}`,
+    slug: post.slug,
   }));
 }
 
@@ -158,7 +158,7 @@ export default async function PostPage({ params }: PostProps) {
               <PostSeriesBox data={post.series} />
             </div>
           )}
-          <Mdx code={post.body.code} />
+          <Mdx code={post.mdx} />
           <hr className="my-4" />
           <div className="flex flex-row items-center justify-between">
             {post.tags && (
@@ -172,10 +172,7 @@ export default async function PostPage({ params }: PostProps) {
                 ))}
               </ul>
             )}
-            <SocialShare
-              text={`${post.title} via ${defaultAuthor.handle}`}
-              url={`${BASE_URL}/${post._raw.flattenedPath}`}
-            />
+            <SocialShare text={`${post.title} via ${defaultAuthor.handle}`} url={`${BASE_URL}/posts/${post.slug}`} />
           </div>
         </article>
         <aside className="hidden lg:block">
