@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 
 import siteMetadata, { defaultAuthor } from "@/lib/metadata";
 import { CopyButton } from "@/components/copy-button";
+import { CurrentYear } from "@/components/current-year";
 import { Signature } from "@/components/signature";
 import { SocialButton } from "@/components/social-button";
 
@@ -30,7 +31,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4 px-8 md:gap-2 md:px-0 lg:order-1">
           <p className="text-sm text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Built by {defaultAuthor.name}. &nbsp;
+            &copy; <CurrentYear /> Built by {defaultAuthor.name}. &nbsp;
             <a
               href={defaultAuthor.socialProfiles.find((platform) => platform.name === "x")?.link}
               target="_blank"

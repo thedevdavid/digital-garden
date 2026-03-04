@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { DialogProps } from "@radix-ui/react-alert-dialog";
+import { DialogProps } from "@radix-ui/react-dialog";
 import { File, Github, Laptop, Mail, Moon, Sun, Twitter } from "lucide-react";
 import { useTheme } from "next-themes";
 

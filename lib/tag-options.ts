@@ -1,0 +1,15 @@
+export const tagOptions = [
+  "starter",
+  "development",
+  "docs",
+  "freelancing",
+  "opinion",
+  "jamstack",
+  "frontend",
+  "javascript",
+  "typescript",
+  "react",
+  "nextjs",
+  "gatsby",
+  "tailwindcss",
+] as const;

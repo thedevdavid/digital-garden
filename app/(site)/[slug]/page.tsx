@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allPages } from "contentlayer/generated";
+import { allPages } from "content-collections";
 import { format, parseISO } from "date-fns";
 
 import { Mdx } from "@/components/mdx";
@@ -58,7 +58,7 @@ export default async function PagePage({ params }: PageProps) {
           </time>
         )}
         <hr className="my-4" />
-        <Mdx code={page.body.code} />
+        <Mdx code={page.mdx} />
       </article>
     </div>
   );
