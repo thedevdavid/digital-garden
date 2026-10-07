@@ -107,7 +107,7 @@ You can deploy the project with [Vercel](https://vercel.com/) or any other hosti
 
 ## Customization
 
-### Fonts
+### Fontspnp
 
 This project uses [Inter](https://rsms.me/inter/) as the default font. You can change it on `app/layout.tsx` using the `next/fonts` package.
 
@@ -208,7 +208,6 @@ Note: DO NOT overdo it. You can easily make images look bad with lossy compressi
 - [Praveen kumars's Blog](https://sumandeepuniversity.org) - [Source](https://github.com/gramythedj/digital-garden)
 - [Steven Selolo's Blog](https://stevenselolo.com/) - [Source](https://github.com/StevenPss/website-2023)
 - [Marton's Blog](https://www.martondobos.com/) - [Source](https://github.com/dobosmarton/digital-garden)
-
 
 **Create a PR and add your blog to this list if you're using the template!**
 
